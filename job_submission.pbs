@@ -1,0 +1,18 @@
+#!/bin/bash --login
+#
+#PBS -q gpu
+#PBS -l select=1:ncpus=40:ngpus=4
+#PBS -N kfold_3_epochs_test_1
+#PBS -A d167
+#PBS -l walltime=0:15:0
+
+
+
+# Switch to current working directory
+cd $PBS_O_WORKDIR
+
+module load miniconda 
+/lustre/home/d167/s1137563/ENTER/bin/python3 main.py
+
+
+

@@ -1,6 +1,6 @@
 import unet_model
 from data_helper import dataGenerator,load_data_Kfold, get_items, test_file_reader, saveResult
-
+import ipdb
 
 
 BATCH_SIZE = 2
@@ -36,6 +36,7 @@ for fold_number in range(k):
     generator = dataGenerator(BATCH_SIZE, x_training,y_training,data_gen_args,seed = 1) 
     model.fit_generator(generator,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=3,verbose=1,validation_data = (x_valid,y_valid))
 
+print('hello')
 #Read test data and evaluate
 testGen = test_file_reader(im_test)
 

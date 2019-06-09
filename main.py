@@ -15,7 +15,7 @@ data_gen_args = dict(rotation_range=0.2,
 
 im_path = 'data/membrane/train/image'
 label_path = 'data/membrane/train/label'
-im_test = 'data/membrane/train/im_test'
+im_test = 'data/membrane/test'
 
 k = 2
 seed = 1

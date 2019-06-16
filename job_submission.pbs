@@ -2,7 +2,7 @@
 #
 #PBS -q gpu
 #PBS -l select=1:ncpus=40:ngpus=4
-#PBS -N kfold_3_epochs_test_2
+#PBS -N kfold_3_epochs_test_correct_dataset
 #PBS -A d167
 #PBS -l walltime=0:35:0
 
@@ -12,7 +12,7 @@
 cd $PBS_O_WORKDIR
 
 module load miniconda 
-/lustre/home/d167/s1137563/ENTER/bin/python3 main.py
+/lustre/home/d167/s1137563/ENTER/bin/python3 main.py > output 2> error
 
 
 

@@ -38,6 +38,9 @@ from keras_unet.utils import get_augmented
 from keras.optimizers import Adam, SGD
 from keras_unet.models import custom_unet
 BATCH_SIZE = 2
+
+cv_losses=[]
+cv_acc=[]
 for fold_number, (train_idx,val_idx) in enumerate(folds):
     print(f'Training fold {fold_number}')
     x_training = get_items(x_train[train_idx])
@@ -71,14 +74,20 @@ for fold_number, (train_idx,val_idx) in enumerate(folds):
     #generator = dataGenerator(BATCH_SIZE, x_training,y_training,data_gen_args,seed = 1) 
     history = model.fit_generator(train_gen,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=1,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
     #history = model.fit_generator(train_gen,steps_per_epoch=2,epochs=3,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
+    scores = model.evaluate(x_valid, y_valid)
+    #print(scores)    
+    cv_losses.append(scores[0]*100)
+    cv_acc.append(scores[1] * 100)
 
+print("Loss is %.2f%% (+/- %.2f%%)" % (np.mean(cv_losses), np.std(cv_losses)))
+print("Accuracy is %.2f%% (+/- %.2f%%)" % (np.mean(cv_acc), np.std(cv_acc)))
 
-print(history.history['val_loss'])
+#print(history.history['val_loss'])
 
 
 from keras_unet.utils import plot_segm_history
 
-#figure = plot_segm_history(history)
+figure = plot_segm_history(history)
 
 model.load_weights(model_filename)
 y_pred = model.predict(x_valid)

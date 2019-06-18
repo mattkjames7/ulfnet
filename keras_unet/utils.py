@@ -86,7 +86,7 @@ def plot_segm_history(history, metrics=['iou', 'val_iou'], losses=['loss', 'val_
     #plt.yticks(np.arange(0.3, 1, step=0.02), fontsize=35)
     #plt.xticks(fontsize=35)
     plt.legend(metrics, loc='center right', fontsize=15)
-    plt.show()
+    plt.savefig('iou_vs_epochs.png', format='png', dpi=1000)
     # summarize history for loss
     plt.figure(figsize=(12,6))    
     for loss in losses:
@@ -97,7 +97,7 @@ def plot_segm_history(history, metrics=['iou', 'val_iou'], losses=['loss', 'val_
     #plt.yticks(np.arange(0, 0.2, step=0.005), fontsize=35)
     #plt.xticks(fontsize=35)
     plt.legend(losses, loc='center right', fontsize=15)
-    plt.show()
+    plt.savefig('losses_vs_epochs.png', format='png', dpi=1000)
 
 
 def mask_to_red(mask):
@@ -186,7 +186,7 @@ def plot_imgs(org_imgs,
             axes[m, 2].set_axis_off()
         im_id += 1
 
-    plt.show()
+    plt.savefig('predictions_overlay.png', format='png', dpi=1000)
 
 
 def zero_pad_mask(mask, desired_size):

@@ -51,9 +51,11 @@ for fold_number, (train_idx,val_idx) in enumerate(folds):
     #optimizer=SGD(lr=0.01, momentum=0.99),
     loss='binary_crossentropy',
     #loss=jaccard_distance,
-   # metrics=[iou, iou_thresholded]
+    #metrics=[iou, iou_thresholded]
     metrics = ['accuracy'])
-       
+
+    #ADD IOU METRIC?
+
     train_gen = get_augmented(
     x_training, y_training, batch_size=2,
     data_gen_args = dict(
@@ -80,9 +82,9 @@ from keras_unet.utils import plot_segm_history
 
 model.load_weights(model_filename)
 y_pred = model.predict(x_valid)
-print("hello 1")
-from keras_unet.utils import plot_imgs
-print("hello 2")
-images= plot_imgs(org_imgs=x_valid, mask_imgs=y_valid, pred_imgs=y_pred, nm_img_to_plot=9)
-print("hello 3")
 
+from keras_unet.utils import plot_imgs
+
+images= plot_imgs(org_imgs=x_valid, mask_imgs=y_valid, pred_imgs=y_pred, nm_img_to_plot=9)
+
+#ADD CODE TO PREDICT ON TEST IMAGES

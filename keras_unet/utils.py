@@ -86,7 +86,7 @@ def plot_segm_history(history, metrics=['acc', 'val_acc'], losses=['loss', 'val_
     #plt.yticks(np.arange(0.3, 1, step=0.02), fontsize=35)
     #plt.xticks(fontsize=35)
     plt.legend(metrics, loc='center right', fontsize=15)
-    plt.savefig('iou_vs_epochs.png', format='png', dpi=1000)
+    plt.savefig('acc_vs_epochs.png', format='png', dpi=1000)
     # summarize history for loss
     plt.figure(figsize=(12,6))    
     for loss in losses:
@@ -341,3 +341,25 @@ def reconstruct_from_patches(img_arr, org_img_size, stride=None, size=None):
         images_list.append(img_bg)
         
     return np.stack(images_list)
+
+
+
+def test_file_reader(test_path, as_gray = True, target_dim = (512,512)):
+    '''
+        Reads path, resized and returns all images on specified folder
+    '''
+    extensions = glob(os.path.join(test_path,'*.jpg'))
+    for filename in extensions:
+        img = io.imread(filename,as_gray = as_gray)
+        img = trans.resize(img, target_dim, mode='constant')
+        img = np.reshape(img,img.shape+(1,))
+        img = np.reshape(img,(1,)+img.shape)
+        yield img
+        
+        
+def saveResult(save_path,pred_im_array): 
+    #saves images into specified directory
+    for i,item in enumerate(pred_im_array):
+        img = item[:,:,0]
+        io.imsave(os.path.join(save_path,f"{i}_predict.png"),img)
+

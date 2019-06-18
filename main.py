@@ -92,8 +92,11 @@ figure = plot_segm_history(history)
 model.load_weights(model_filename)
 y_pred = model.predict(x_valid)
 
-from keras_unet.utils import plot_imgs
+from keras_unet.utils import plot_imgs, test_file_reader, saveResult  
 
 images= plot_imgs(org_imgs=x_valid, mask_imgs=y_valid, pred_imgs=y_pred, nm_img_to_plot=9)
 
-#ADD CODE TO PREDICT ON TEST IMAGES
+
+testGen = test_file_reader('input/test')
+results = model.predict_generator(testGen,10,verbose=1)
+saveResult("input/test",results)

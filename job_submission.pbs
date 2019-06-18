@@ -2,7 +2,7 @@
 #
 #PBS -q gpu
 #PBS -l select=1:ncpus=40:ngpus=4
-#PBS -N karolzak_cv_score_and_plots
+#PBS -N karolzak_test_data
 #PBS -A d167
 #PBS -l walltime=1:00:0
 

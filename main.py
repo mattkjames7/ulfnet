@@ -20,7 +20,7 @@ from keras.callbacks import ModelCheckpoint
 from keras_unet.models import custom_unet
 model = custom_unet(
     (512,512,1),
-    use_batch_norm=False,
+    use_batch_norm=True,
     num_classes=1,
     filters=64,
     dropout=0.2,
@@ -72,7 +72,7 @@ for fold_number, (train_idx,val_idx) in enumerate(folds):
         fill_mode='constant'
     ))
     #generator = dataGenerator(BATCH_SIZE, x_training,y_training,data_gen_args,seed = 1) 
-    history = model.fit_generator(train_gen,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=1,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
+    history = model.fit_generator(train_gen,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=10,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
     #history = model.fit_generator(train_gen,steps_per_epoch=2,epochs=3,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
     scores = model.evaluate(x_valid, y_valid)
     #print(scores)    

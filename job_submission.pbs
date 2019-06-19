@@ -2,9 +2,9 @@
 #
 #PBS -q gpu
 #PBS -l select=1:ncpus=40:ngpus=4
-#PBS -N iou_152days_old_network_10_epoch_plotting_overlay
+#PBS -N add_iou_thresholded_1_epoch
 #PBS -A d167
-#PBS -l walltime=1:10:0
+#PBS -l walltime=0:15:0
 
 
 

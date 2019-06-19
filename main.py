@@ -35,7 +35,7 @@ for fold_number in range(k):
     y_valid = get_items(y_validation[fold_number])
     print(f'Training fold {fold_number}')
     generator = dataGenerator(BATCH_SIZE, x_training,y_training,data_gen_args,seed = 1) 
-    model.fit_generator(generator,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=3,verbose=1,validation_data = (x_valid,y_valid))
+    model.fit_generator(generator,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=1,verbose=1,validation_data = (x_valid,y_valid))
    # print(model.evaluate(x_valid, y_valid))
     scores = model.evaluate(x_valid, y_valid)
     print(scores)    

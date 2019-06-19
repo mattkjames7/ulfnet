@@ -2,9 +2,9 @@
 #
 #PBS -q gpu
 #PBS -l select=1:ncpus=40:ngpus=4
-#PBS -N kfold_3_epochs_test_correct_dataset
+#PBS -N iou_152days_old_network_1_epoch
 #PBS -A d167
-#PBS -l walltime=0:35:0
+#PBS -l walltime=0:15:0
 
 
 

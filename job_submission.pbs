@@ -2,7 +2,7 @@
 #
 #PBS -q gpu
 #PBS -l select=1:ncpus=40:ngpus=4
-#PBS -N karolzak_dropout_0.4_iou
+#PBS -N karolzak_dropout_0.5_iou
 #PBS -A d167
 #PBS -l walltime=0:15:0
 

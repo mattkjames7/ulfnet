@@ -23,7 +23,7 @@ model = custom_unet(
     use_batch_norm=False,
     num_classes=1,
     filters=64,
-    dropout=0.4,
+    dropout=0.5,
     output_activation='sigmoid')
 
 model_filename = 'segm_model_v0.h5'

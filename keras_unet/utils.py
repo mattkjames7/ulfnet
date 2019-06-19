@@ -75,7 +75,7 @@ def get_items(array_of_filenames, target_dim = (512,512)):
 
 
     #NEED TO ADD IOU AND VAL IOU AS METRICS
-def plot_segm_history(history, metrics=['acc', 'val_acc'], losses=['loss', 'val_loss']):
+def plot_segm_history(history, metrics=['acc', 'val_acc', 'iou', 'val_iou'], losses=['loss', 'val_loss']):
     # summarize history for iou
     plt.figure(figsize=(12,6))
     for metric in metrics:

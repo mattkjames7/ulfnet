@@ -37,6 +37,7 @@ callback_checkpoint = ModelCheckpoint(
 from keras_unet.utils import get_augmented
 from keras.optimizers import Adam, SGD
 from keras_unet.models import custom_unet
+from keras_unet.metrics import iou
 BATCH_SIZE = 2
 
 cv_losses=[]
@@ -55,7 +56,8 @@ for fold_number, (train_idx,val_idx) in enumerate(folds):
     loss='binary_crossentropy',
     #loss=jaccard_distance,
     #metrics=[iou, iou_thresholded]
-    metrics = ['accuracy'])
+    metrics=[iou, 'accuracy'])
+    #metrics = ['accuracy'])
 
     #ADD IOU METRIC?
 

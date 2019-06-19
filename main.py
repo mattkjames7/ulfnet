@@ -8,14 +8,14 @@ from keras.callbacks import ModelCheckpoint
 
 BATCH_SIZE = 2
         
-data_gen_args = dict(rotation_range=15,
+data_gen_args = dict(rotation_range=0.2,
                     width_shift_range=0.05,
                     height_shift_range=0.05,
-                    shear_range=50,
-                    zoom_range=0.2,
+                    shear_range=0.05,
+                    zoom_range=0.05,
                     horizontal_flip=True,
-                    vertical_flip=True,
-                    fill_mode='constant')
+                   # vertical_flip=True,
+                    fill_mode='nearest')
 
 im_path = 'data/membrane/train/image'
 label_path = 'data/membrane/train/label'

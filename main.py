@@ -37,7 +37,7 @@ callback_checkpoint = ModelCheckpoint(
 from keras_unet.utils import get_augmented
 from keras.optimizers import Adam, SGD
 from keras_unet.models import custom_unet
-from keras_unet.metrics import iou
+from keras_unet.metrics import iou, iou_thresholded
 BATCH_SIZE = 2
 
 cv_losses=[]
@@ -56,7 +56,7 @@ for fold_number, (train_idx,val_idx) in enumerate(folds):
     loss='binary_crossentropy',
     #loss=jaccard_distance,
     #metrics=[iou, iou_thresholded]
-    metrics=[iou, 'accuracy'])
+    metrics=[iou, iou_thresholded, 'accuracy'])
     #metrics = ['accuracy'])
 
     #ADD IOU METRIC?
@@ -74,7 +74,7 @@ for fold_number, (train_idx,val_idx) in enumerate(folds):
         fill_mode='constant'
     ))
     #generator = dataGenerator(BATCH_SIZE, x_training,y_training,data_gen_args,seed = 1) 
-    history = model.fit_generator(train_gen,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=10,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
+    history = model.fit_generator(train_gen,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=1,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
     #history = model.fit_generator(train_gen,steps_per_epoch=2,epochs=3,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
     scores = model.evaluate(x_valid, y_valid)
     #print(scores)    

@@ -96,6 +96,7 @@ figure = plot_segm_history(history)
 model.load_weights(model_filename)
 y_pred = model.predict(x_valid)
 print(type(y_pred))
+print(y_pred)
 
 data_tf = tf.convert_to_tensor(y_pred,np.float32)
 print(type(data_tf))
@@ -105,20 +106,15 @@ print(type(y_pred_thresholded))
 
 y_pred_thresholded_np=tf.Session().run(y_pred_thresholded)
 print(type(y_pred_thresholded_np))
-
+print(y_pred_thresholded_np)
 #y_pred_thresholded_np =y_pred_thresholded.numpy()
 #print(type(y_pred_thresholded_np)) 
-print('hello')
+#print('hello')
 
 from keras_unet.utils import plot_imgs, test_file_reader, saveResult  
 
 #images= plot_imgs(org_imgs=x_valid, mask_imgs=y_valid, pred_imgs=y_pred, nm_img_to_plot=9)
-#Groud truth is actually our prediction on validation data - prediction is the the prediction thresholded 
-# thresholded_binarized function with a value of 0.5
 images= plot_imgs(org_imgs=x_valid, mask_imgs=y_pred, pred_imgs=y_pred_thresholded_np, nm_img_to_plot=9)
-
-
-
 
 testGen = test_file_reader('input/test')
 results = model.predict_generator(testGen,10,verbose=1)

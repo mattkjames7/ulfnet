@@ -101,7 +101,7 @@ print(y_pred)
 data_tf = tf.convert_to_tensor(y_pred,np.float32)
 print(type(data_tf))
 
-y_pred_thresholded = threshold_binarize(data_tf, threshold=0.5)
+y_pred_thresholded = threshold_binarize(data_tf, threshold=0.7)
 print(type(y_pred_thresholded))
 
 y_pred_thresholded_np=tf.Session().run(y_pred_thresholded)

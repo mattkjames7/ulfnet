@@ -23,7 +23,7 @@ model = custom_unet(
     use_batch_norm=False,
     num_classes=1,
     filters=64,
-    dropout=0.5,
+    dropout=0.2,
     output_activation='sigmoid')
 
 model_filename = 'segm_model_v0.h5'
@@ -95,26 +95,26 @@ figure = plot_segm_history(history)
 
 model.load_weights(model_filename)
 y_pred = model.predict(x_valid)
-print(type(y_pred))
-print(y_pred)
+#print(type(y_pred))
+#print(y_pred)
 
-data_tf = tf.convert_to_tensor(y_pred,np.float32)
-print(type(data_tf))
+#data_tf = tf.convert_to_tensor(y_pred,np.float32)
+#print(type(data_tf))
 
-y_pred_thresholded = threshold_binarize(data_tf, threshold=0.7)
-print(type(y_pred_thresholded))
+#y_pred_thresholded = threshold_binarize(data_tf, threshold=0.7)
+#print(type(y_pred_thresholded))
 
-y_pred_thresholded_np=tf.Session().run(y_pred_thresholded)
-print(type(y_pred_thresholded_np))
-print(y_pred_thresholded_np)
+#y_pred_thresholded_np=tf.Session().run(y_pred_thresholded)
+#print(type(y_pred_thresholded_np))
+#print(y_pred_thresholded_np)
 #y_pred_thresholded_np =y_pred_thresholded.numpy()
 #print(type(y_pred_thresholded_np)) 
 #print('hello')
 
 from keras_unet.utils import plot_imgs, test_file_reader, saveResult  
 
-#images= plot_imgs(org_imgs=x_valid, mask_imgs=y_valid, pred_imgs=y_pred, nm_img_to_plot=9)
-images= plot_imgs(org_imgs=x_valid, mask_imgs=y_pred, pred_imgs=y_pred_thresholded_np, nm_img_to_plot=9)
+images= plot_imgs(org_imgs=x_valid, mask_imgs=y_valid, pred_imgs=y_pred, nm_img_to_plot=9)
+#images= plot_imgs(org_imgs=x_valid, mask_imgs=y_pred, pred_imgs=y_pred_thresholded_np, nm_img_to_plot=9)
 
 testGen = test_file_reader('input/test')
 results = model.predict_generator(testGen,10,verbose=1)

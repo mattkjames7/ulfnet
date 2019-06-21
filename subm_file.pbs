@@ -1,0 +1,22 @@
+#!/bin/bash --login
+#
+#PBS -l select=1:ncpus=36
+#PBS -l place=excl
+#PBS -N 3_epochs_300_steps_learning_Nadam_job11
+#PBS -A d167
+#PBS -l walltime=0:50:0
+
+
+
+# Switch to current working directory
+cd $PBS_O_WORKDIR
+
+# Run the parallel program
+#module load anaconda/python3
+#/lustre/home/d167/s1137563/ENTER/condabin/conda activate unet 
+#/lustre/home/d167/s1137563/ENTER/bin/python3 main.py
+module load miniconda 
+/lustre/home/d167/s1137563/ENTER/bin/python3 main.py
+
+
+

@@ -2,7 +2,7 @@
 #
 #PBS -l select=1:ncpus=36
 #PBS -l place=excl
-#PBS -N 3_epochs_300_steps_learning_Nadam_job11
+#PBS -N cpu_node_10epochs_178days_old_network
 #PBS -A d167
 #PBS -l walltime=0:50:0
 
@@ -16,7 +16,7 @@ cd $PBS_O_WORKDIR
 #/lustre/home/d167/s1137563/ENTER/condabin/conda activate unet 
 #/lustre/home/d167/s1137563/ENTER/bin/python3 main.py
 module load miniconda 
-/lustre/home/d167/s1137563/ENTER/bin/python3 main.py
+/lustre/home/d167/s1137563/ENTER/bin/python3 main.py > output 2> error
 
 
 

@@ -8,38 +8,18 @@ Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep
 WARNING:tensorflow:From /lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Use tf.cast instead.
-2019-06-21 19:52:21.080547: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
-2019-06-21 19:52:21.766334: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2099935000 Hz
-2019-06-21 19:52:21.853041: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5555593de590 executing computations on platform Host. Devices:
-2019-06-21 19:52:21.853500: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
-2019-06-21 19:52:21.853770: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
-/lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/skimage/io/_io.py:141: UserWarning: data/membrane/test/0_predict.png is a low contrast image
-  warn('%s is a low contrast image' % fname)
+2019-06-22 09:09:45.263395: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+2019-06-22 09:09:45.578993: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400025000 Hz
+2019-06-22 09:09:45.628971: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x555559407d60 executing computations on platform Host. Devices:
+2019-06-22 09:09:45.629392: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-06-22 09:09:45.629551: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
 Lossy conversion from float32 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
-/lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/skimage/io/_io.py:141: UserWarning: data/membrane/test/1_predict.png is a low contrast image
-  warn('%s is a low contrast image' % fname)
 Lossy conversion from float32 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
-/lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/skimage/io/_io.py:141: UserWarning: data/membrane/test/2_predict.png is a low contrast image
-  warn('%s is a low contrast image' % fname)
 Lossy conversion from float32 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
-/lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/skimage/io/_io.py:141: UserWarning: data/membrane/test/3_predict.png is a low contrast image
-  warn('%s is a low contrast image' % fname)
 Lossy conversion from float32 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
-/lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/skimage/io/_io.py:141: UserWarning: data/membrane/test/4_predict.png is a low contrast image
-  warn('%s is a low contrast image' % fname)
 Lossy conversion from float32 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
-/lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/skimage/io/_io.py:141: UserWarning: data/membrane/test/5_predict.png is a low contrast image
-  warn('%s is a low contrast image' % fname)
 Lossy conversion from float32 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
-/lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/skimage/io/_io.py:141: UserWarning: data/membrane/test/6_predict.png is a low contrast image
-  warn('%s is a low contrast image' % fname)
 Lossy conversion from float32 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
-/lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/skimage/io/_io.py:141: UserWarning: data/membrane/test/7_predict.png is a low contrast image
-  warn('%s is a low contrast image' % fname)
 Lossy conversion from float32 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
-/lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/skimage/io/_io.py:141: UserWarning: data/membrane/test/8_predict.png is a low contrast image
-  warn('%s is a low contrast image' % fname)
 Lossy conversion from float32 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.
-/lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/skimage/io/_io.py:141: UserWarning: data/membrane/test/9_predict.png is a low contrast image
-  warn('%s is a low contrast image' % fname)
 Lossy conversion from float32 to uint8. Range [0, 1]. Convert image to uint8 prior to saving to suppress this warning.

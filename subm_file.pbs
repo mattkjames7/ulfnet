@@ -1,7 +1,7 @@
 #!/bin/bash --login
 #
-#PBS -l select=1:ncpus=36
-#PBS -l place=excl
+#PBS -q gpu
+#PBS -l select=1:ncpus=40:ngpus=4
 #PBS -N cpu_node_10epochs_178days_old_network
 #PBS -A d167
 #PBS -l walltime=0:50:0

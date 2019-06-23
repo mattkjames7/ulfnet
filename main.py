@@ -21,7 +21,7 @@ im_path = 'data/membrane/train/image'
 label_path = 'data/membrane/train/label'
 im_test = 'data/membrane/test'
 
-k = 10
+k = 5
 seed = 1
 
 #Create folds

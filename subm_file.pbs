@@ -2,9 +2,9 @@
 #
 #PBS -q gpu
 #PBS -l select=1:ncpus=40:ngpus=4
-#PBS -N 10e_k_10
+#PBS -N 10e_k_5
 #PBS -A d167
-#PBS -l walltime=3:00:0
+#PBS -l walltime=1:30:0
 
 
 

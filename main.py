@@ -14,6 +14,9 @@ from keras_unet.utils import get_augmented
 from keras.optimizers import Adam, SGD
 from keras_unet.models import custom_unet
 from keras_unet.metrics import iou, iou_thresholded
+
+
+
 BATCH_SIZE = 2
 
 
@@ -26,6 +29,11 @@ k = 2
 
 from keras.callbacks import ModelCheckpoint
 from keras_unet.models import custom_unet
+
+import time
+start_time = time.time()
+
+
 model = custom_unet(
     (512,512,1),
     use_batch_norm=False,
@@ -80,7 +88,7 @@ for fold_number in range(k):
     print(f'Training fold {fold_number}')
     #generator = dataGenerator(BATCH_SIZE, x_training,y_training,data_gen_args,seed = 1) 
     train_gen = get_augmented(x_training, y_training, batch_size=2, seed=1)
-    history = model.fit_generator(train_gen,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=1,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
+    history = model.fit_generator(train_gen,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=10,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
     figure = plot_segm_history(history, fold_number)
     #history = model.fit_generator(train_gen,steps_per_epoch=2,epochs=3,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
     #scores = model.evaluate(x_valid, y_valid)
@@ -102,7 +110,7 @@ for fold_number in range(k):
 
 model.load_weights(model_filename)
 y_pred = model.predict(x_valid)
-#print(type(y_pred))
+#print(type(y_pred))i
 #print(y_pred)
 
 #data_tf = tf.convert_to_tensor(y_pred,np.float32)
@@ -116,7 +124,7 @@ y_pred = model.predict(x_valid)
 #print(y_pred_thresholded_np)
 #y_pred_thresholded_np =y_pred_thresholded.numpy()
 #print(type(y_pred_thresholded_np)) 
-#print('hello')
+#print('hello' seconds ---" % (time.time() - start_time))
 
 from keras_unet.utils import plot_imgs, test_file_reader, saveResult  
 
@@ -128,3 +136,6 @@ print(x_validation[fold_number])
 testGen = test_file_reader('input/test')
 results = model.predict_generator(testGen,10,verbose=1)
 saveResult("input/test",results)
+
+
+print("--- %s seconds ---" % (time.time() - start_time))

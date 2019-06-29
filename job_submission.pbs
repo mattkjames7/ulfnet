@@ -4,7 +4,7 @@
 #PBS -l select=1:ncpus=40:ngpus=4
 #PBS -N repeat
 #PBS -A d167-s1137563
-#PBS -l walltime=0:45:0
+#PBS -l walltime=2:00:0
 
 
 

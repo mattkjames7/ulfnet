@@ -58,15 +58,25 @@ def load_data_Kfold(path_X,path_Y,k):
     train_labels = glob(os.path.join(path_Y,'*.jpg'))
     X_train_np = np.asarray(train_files)
     Y_train_np = np.asarray(train_labels)
-    folds = list(KFold(n_splits=k,shuffle=True,random_state=1).split(X_train_np))
-    return folds, X_train_np, Y_train_np 
+    kf = KFold(n_splits=k,shuffle=True,random_state=1)
+    X_valid = []
+    X_train = []
+    y_train = []
+    y_valid = []
+    for train_index, test_index in kf.split(X_train_np):
+        X_train.append([np.sort(X_train_np[train_index])])
+        X_valid.append([np.sort(X_train_np[test_index])])
+        y_train.append([np.sort(Y_train_np[train_index])])
+        y_valid.append([np.sort(Y_train_np[test_index])])
+    return X_train, X_valid, y_train, y_valid    
 
 
 
-def get_items(array_of_filenames, target_dim = (512,512)):
-    image_list = []
-    for j in range(len(array_of_filenames)):
-        img = io.imread(array_of_filenames[j],as_gray = True)
+def get_items(list_of_lists, target_dim = (512,512)):
+    image_list = [] 
+    flat_list = [item for list_of_lists[0] in list_of_lists for item in list_of_lists[0]]
+    for j in range(len(flat_list)):
+        img = io.imread(flat_list[j],as_gray = True)
         img = trans.resize(img, target_dim, mode='constant')
         image_list.append(img)
         image_np = np.asarray(image_list)
@@ -74,30 +84,31 @@ def get_items(array_of_filenames, target_dim = (512,512)):
     return image_np   
 
 
+
     #NEED TO ADD IOU AND VAL IOU AS METRICS
-def plot_segm_history(history, metrics=['acc', 'val_acc', 'iou', 'val_iou'], losses=['loss', 'val_loss']):
+def plot_segm_history(history, fold_number, metrics=['acc', 'val_acc', 'iou', 'val_iou'], losses=['loss', 'val_loss']):
     # summarize history for iou
     plt.figure(figsize=(12,6))
     for metric in metrics:
         plt.plot(history.history[metric], linewidth=3)
-    plt.suptitle('metrics over epochs', fontsize=20)
+    plt.suptitle(f'metrics over epochs - Training Fold {fold_number}', fontsize=20)
     plt.ylabel('metric', fontsize=20)
     plt.xlabel('epoch', fontsize=20)
     #plt.yticks(np.arange(0.3, 1, step=0.02), fontsize=35)
     #plt.xticks(fontsize=35)
     plt.legend(metrics, loc='center right', fontsize=15)
-    plt.savefig('acc_vs_epochs.png', format='png', dpi=1000)
+    plt.savefig(f'acc_vs_epochs_tf_{fold_number}.png', format='png', dpi=1000)
     # summarize history for loss
     plt.figure(figsize=(12,6))    
     for loss in losses:
         plt.plot(history.history[loss], linewidth=3)
-    plt.suptitle('loss over epochs', fontsize=20)
+    plt.suptitle(f'loss over epochs - Training Fold {fold_number}', fontsize=20)
     plt.ylabel('loss', fontsize=20)
     plt.xlabel('epoch', fontsize=20)
     #plt.yticks(np.arange(0, 0.2, step=0.005), fontsize=35)
     #plt.xticks(fontsize=35)
     plt.legend(losses, loc='center right', fontsize=15)
-    plt.savefig('losses_vs_epochs.png', format='png', dpi=1000)
+    plt.savefig(f'losses_vs_epochs_tf_{fold_number}.png', format='png', dpi=1000)
 
 
 def mask_to_red(mask):

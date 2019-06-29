@@ -93,7 +93,7 @@ def saveResult(save_path,pred_im_array):
         img = item[:,:,0]
         io.imsave(os.path.join(save_path,f"{i}_predict.png"),img)
         
- 
+''' 
 def plot_metrics(history_obj):
     fig = plt.figure()
     plt.plot(history_obj.history['loss'])
@@ -102,6 +102,7 @@ def plot_metrics(history_obj):
     plt.xlabel('epoch')  
     plt.legend(['loss', 'accuracy'], loc='upper left') 
     fig.savefig('model_performance.png', dpi=1000)   
+'''
 
 def reshape_arr(arr):
     if arr.ndim == 3:
@@ -227,3 +228,30 @@ def plot_imgs(org_imgs,
         im_id += 1
 
     plt.savefig('predictions_overlay.png', format='png', dpi=1000)    
+
+
+
+
+def plot_segm_history(history, fold_number, metrics=['acc', 'val_acc', 'iou', 'val_iou'], losses=['loss', 'val_loss']):
+    # summarize history for iou
+    plt.figure(figsize=(12,6))
+    for metric in metrics:
+        plt.plot(history.history[metric], linewidth=3)
+    plt.suptitle(f'metrics over epochs - Training Fold {fold_number}', fontsize=20)
+    plt.ylabel('metric', fontsize=20)
+    plt.xlabel('epoch', fontsize=20)
+    #plt.yticks(np.arange(0.3, 1, step=0.02), fontsize=35)
+    #plt.xticks(fontsize=35)
+    plt.legend(metrics, loc='center right', fontsize=15)
+    plt.savefig(f'acc_vs_epochs_tf_{fold_number}.png', format='png', dpi=1000)
+    # summarize history for loss
+    plt.figure(figsize=(12,6))    
+    for loss in losses:
+        plt.plot(history.history[loss], linewidth=3)
+    plt.suptitle(f'loss over epochs - Training Fold {fold_number}', fontsize=20)
+    plt.ylabel('loss', fontsize=20)
+    plt.xlabel('epoch', fontsize=20)
+    #plt.yticks(np.arange(0, 0.2, step=0.005), fontsize=35)
+    #plt.xticks(fontsize=35)
+    plt.legend(losses, loc='center right', fontsize=15)
+    plt.savefig(f'losses_vs_epochs_tf_{fold_number}.png', format='png', dpi=1000)

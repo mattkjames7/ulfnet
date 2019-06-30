@@ -34,14 +34,16 @@ import time
 start_time = time.time()
 
 
-model = custom_unet(
-    (512,512,1),
-    use_batch_norm=False,
-    num_classes=1,
-    filters=64,
-    dropout=0.2,
-    output_activation='sigmoid')
+def get_callbacks(name_weights):
+    mcp_save = ModelCheckpoint(name_weights, save_best_only=True, monitor='val_loss', mode='min')
+   # reduce_lr_loss = ReduceLROnPlateau(monitor='loss', factor=0.1, patience=patience_lr, verbose=1, epsilon=1e-4, mode='min')
+    return [mcp_save]
 
+
+
+
+
+'''
 model_filename = 'segm_model_v0.h5'
 callback_checkpoint = ModelCheckpoint(
     model_filename, 
@@ -49,16 +51,10 @@ callback_checkpoint = ModelCheckpoint(
     monitor='val_loss', 
     save_best_only=True,
 )
+'''
 
 
-model.compile(
-optimizer=Adam(lr=0.0001), 
-#optimizer=SGD(lr=0.01, momentum=0.99),
-loss='binary_crossentropy',
-#loss=jaccard_distance,
-#metrics=[iou, iou_thresholded]
-metrics=[iou, iou_thresholded, 'accuracy'])
-#metrics = ['accuracy'])
+
 
 #ADD IOU METRIC?
 
@@ -77,9 +73,9 @@ from keras_unet.utils import plot_segm_history
 
 
 
-
 x_train,x_validation,y_train,y_validation = load_data_Kfold(im_path,label_path,k)
 
+cv_losses=[]
 for fold_number in range(k):
     x_training = get_items(x_train[fold_number])
     y_training = get_items(y_train[fold_number])
@@ -88,8 +84,23 @@ for fold_number in range(k):
     print(f'Training fold {fold_number}')
     #generator = dataGenerator(BATCH_SIZE, x_training,y_training,data_gen_args,seed = 1) 
     train_gen = get_augmented(x_training, y_training, batch_size=2, seed=1)
-    history = model.fit_generator(train_gen,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=10,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
+    name_weights="final_model_fold" + str(fold_number) + "_weights.h5"
+    callbacks=get_callbacks(name_weights = name_weights)
+    model = custom_unet(
+    (512,512,1),
+    use_batch_norm=False,
+    num_classes=1,
+    filters=64,
+    dropout=0.2,
+    output_activation='sigmoid')
+    model.compile(
+    optimizer=Adam(lr=0.0001), 
+    loss='binary_crossentropy',
+    metrics=[iou, iou_thresholded, 'accuracy'])
+    history = model.fit_generator(train_gen,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=10,verbose=1,validation_data = (x_valid,y_valid),callbacks=callbacks)
     figure = plot_segm_history(history, fold_number)
+    scores = model.evaluate(x_valid, y_valid)
+    cv_losses.append(scores[0])
     #history = model.fit_generator(train_gen,steps_per_epoch=2,epochs=3,verbose=1,validation_data = (x_valid,y_valid),callbacks=[callback_checkpoint])
     #scores = model.evaluate(x_valid, y_valid)
     #print(scores)    
@@ -108,7 +119,11 @@ for fold_number in range(k):
 
 #figure = plot_segm_history(history)
 
-model.load_weights(model_filename)
+
+best_fold= cv_losses.index(min(cv_losses))
+print('Best fold is ' +str(best_fold))
+
+model.load_weights("final_model_fold" + str(best_fold) + "_weights.h5")
 y_pred = model.predict(x_valid)
 #print(type(y_pred))i
 #print(y_pred)

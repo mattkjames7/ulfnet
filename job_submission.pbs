@@ -1,10 +1,12 @@
 #!/bin/bash --login
 #
-#PBS -q gpu
-#PBS -l select=1:ncpus=40:ngpus=4
+# PBS -q gpu
+# PBS -l select=1:ncpus=40:ngpus=4
+#PBS -l select=1:ncpus=36
+#PBS -l place=excl
 #PBS -N repeat
 #PBS -A d167-s1137563
-#PBS -l walltime=2:00:0
+#PBS -l walltime=3:00:0
 
 
 

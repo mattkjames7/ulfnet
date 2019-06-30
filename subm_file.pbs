@@ -1,9 +1,9 @@
 #!/bin/bash --login
 #
-#PBS -l select=1:ncpus=36
-#PBS -l place=excl
-# PBS -q gpu
-# PBS -l select=1:ncpus=40:ngpus=4
+# PBS -l select=1:ncpus=36
+# PBS -l place=excl
+#PBS -q gpu
+#PBS -l select=1:ncpus=40:ngpus=4
 #PBS -N test
 #PBS -A d167-s1137563
 #PBS -l walltime=0:40:0

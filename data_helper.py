@@ -45,7 +45,7 @@ def load_data_Kfold(path_X,path_Y,k):
     train_labels = glob(os.path.join(path_Y,'*.jpg'))
     X_train_np = np.asarray(train_files)
     Y_train_np = np.asarray(train_labels)
-    kf = KFold(n_splits=k,shuffle=True,random_state=1)
+    kf = KFold(n_splits=k,shuffle=True,random_state=2)
     X_valid = []
     X_train = []
     y_train = []

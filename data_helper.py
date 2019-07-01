@@ -255,3 +255,87 @@ def plot_segm_history(history, fold_number, metrics=['acc', 'val_acc', 'iou', 'v
     #plt.xticks(fontsize=35)
     plt.legend(losses, loc='center right', fontsize=15)
     plt.savefig(f'losses_vs_epochs_tf_{fold_number}.png', format='png', dpi=1000)
+    
+    
+import pandas as pd
+import cv2
+
+def get_x_and_y(test_path):
+   print('hello_enter')
+     test_files = glob(os.path.join(test_path,'*.jpg'))
+    substring = 'predict'
+    new_test_files=[]
+    for filename in test_files:
+        if substring in filename:
+            new_test_files.append(filename) 
+        
+    for index, filename in enumerate(new_test_files):
+        im = cv2.imread(filename)
+        im = cv2.resize(im,(256,256))
+        new_im = im[:,:,0]
+        new_im=new_im/255
+        
+        rows=new_im.shape[0]
+        cols=new_im.shape[1]
+        
+        xs=[]
+        ys=[]
+        
+        old_x_axis_min = 0
+        old_x_axis_max = 255
+        new_x_axis_min = 0.5
+        new_x_axis_max = 6.3
+        old_x_axis_range = (old_x_axis_max-old_x_axis_min)
+        new_x_axis_range = (new_x_axis_max-new_x_axis_min)
+        
+        old_y_axis_min = 0
+        old_y_axis_max = 255
+        new_y_axis_min = 18.00
+        new_y_axis_max = 30.00
+        old_y_axis_range = (old_y_axis_max-old_y_axis_min)
+        new_y_axis_range = (new_y_axis_max-new_y_axis_min)
+        
+        for x in range(0, cols):
+          for y in range(0, rows):
+              if new_im[x][y] > 0.1:
+                  new_im[x][y] = 1.0
+              elif new_im[x][y] < 0.1:
+                  new_im[x][y] = 0.0
+                  if x == 0:
+                      xs.append(new_x_axis_min) 
+                      if y == 0:
+                          ys.append(new_y_axis_min)
+                      elif y == 255:
+                          ys.append(new_y_axis_max)
+                      else:
+                          ys.append( (((y - old_y_axis_min) * new_y_axis_range)/ old_y_axis_range) + new_y_axis_min)
+                  
+                  elif x == 255:
+                      xs.append(new_x_axis_max)
+                      if y == 0:
+                          ys.append(new_y_axis_min)
+                      elif y == 255:
+                          ys.append(new_y_axis_max)
+                      else:
+                          ys.append( (((y - old_y_axis_min) * new_y_axis_range)/ old_y_axis_range) + new_y_axis_min)
+                      
+                  else:
+                      xs.append( (((x - old_x_axis_min) * new_x_axis_range)/ old_x_axis_range) + new_x_axis_min)
+                      if y == 0:
+                          ys.append(new_y_axis_min)
+                      elif y == 255:
+                          ys.append(new_y_axis_max)
+                      else:
+                          ys.append( (((y - old_y_axis_min) * new_y_axis_range)/ old_y_axis_range) + new_y_axis_min)
+        
+        unique, counts = np.unique(new_im, return_counts=True)
+        print(dict(zip(unique, counts)))
+        
+        rounded_xs = [ round(elem, 2) for elem in xs]
+        rounded_ys = [ round(elem, 2) for elem in ys]
+        
+        converted_values=pd.DataFrame({'Frequency(Hz)': rounded_xs, 'Time(min)': rounded_ys})
+        converted_values.to_csv(os.path.join(test_path,f"{index}_freq_vs_time_output_file.csv"),encoding='utf-8', index=False)
+        print('hello_exit')
+
+    

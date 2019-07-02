@@ -87,12 +87,12 @@ testGen = test_file_reader(im_test)
 #print("Accuracy is %.2f%% (+/- %.2f%%)" % (np.mean(cv_acc), np.std(cv_acc)))
 
 model.load_weights("final_model_fold" + str(best_fold) + "_weights.h5")
-y_pred = model.predict(x_valid)
+#y_pred = model.predict(x_valid)
 
 #images= plot_imgs(org_imgs=x_valid, mask_imgs=y_valid, pred_imgs=y_pred, nm_img_to_plot=9)
 
 
-results = model.predict_generator(testGen,10,verbose=1)
+results = model.predict_generator(testGen,6,verbose=1)
 saveResult("data/membrane/test",results)
 
 calling_function=get_x_and_y("data/membrane/test")

@@ -64,7 +64,7 @@ for fold_number in range(k):
     callbacks=get_callbacks(name_weights = name_weights)
     generator = dataGenerator(BATCH_SIZE, x_training,y_training,data_gen_args,seed = 1) 
     model = unet_model.unet()
-    history=model.fit_generator(generator,steps_per_epoch=5,epochs=1,verbose=1,validation_data = (x_valid,y_valid), callbacks=callbacks)
+    history=model.fit_generator(generator,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=10,verbose=1,validation_data = (x_valid,y_valid), callbacks=callbacks)
     figure = plot_segm_history(history, fold_number)
     scores = model.evaluate(x_valid, y_valid)
     print(f'Data in fold {fold_number}')
@@ -79,21 +79,21 @@ for fold_number in range(k):
    # cv_acc.append(scores[1] * 100)
 #Read test data and evaluate
 
-#best_fold= cv_losses.index(min(cv_losses))
+best_fold= cv_losses.index(min(cv_losses))
 
-#testGen = test_file_reader(im_test)
+testGen = test_file_reader(im_test)
 
 #print("Loss is %.2f%% (+/- %.2f%%)" % (np.mean(cv_losses), np.std(cv_losses)))
 #print("Accuracy is %.2f%% (+/- %.2f%%)" % (np.mean(cv_acc), np.std(cv_acc)))
 
-#model.load_weights("final_model_fold" + str(best_fold) + "_weights.h5")
-#y_pred = model.predict(x_valid)
+model.load_weights("final_model_fold" + str(best_fold) + "_weights.h5")
+y_pred = model.predict(x_valid)
 
 #images= plot_imgs(org_imgs=x_valid, mask_imgs=y_valid, pred_imgs=y_pred, nm_img_to_plot=9)
 
 
-#results = model.predict_generator(testGen,10,verbose=1)
-#saveResult("data/membrane/test",results)
+results = model.predict_generator(testGen,10,verbose=1)
+saveResult("data/membrane/test",results)
 
 calling_function=get_x_and_y("data/membrane/test")
 

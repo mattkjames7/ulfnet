@@ -49,6 +49,8 @@ callback_checkpoint = ModelCheckpoint(
 )
 '''
 
+#steps_per_epoch=len(x_training)/BATCH_SIZE
+
 cv_losses=[]
 #cv_acc=[]
 #CV and training
@@ -62,7 +64,7 @@ for fold_number in range(k):
     callbacks=get_callbacks(name_weights = name_weights)
     generator = dataGenerator(BATCH_SIZE, x_training,y_training,data_gen_args,seed = 1) 
     model = unet_model.unet()
-    history=model.fit_generator(generator,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=1,verbose=1,validation_data = (x_valid,y_valid), callbacks=callbacks)
+    history=model.fit_generator(generator,steps_per_epoch=5,epochs=1,verbose=1,validation_data = (x_valid,y_valid), callbacks=callbacks)
     figure = plot_segm_history(history, fold_number)
     scores = model.evaluate(x_valid, y_valid)
     print(f'Data in fold {fold_number}')

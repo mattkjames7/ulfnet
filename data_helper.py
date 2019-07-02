@@ -76,22 +76,10 @@ def find_parameters(learning_rate,drop_out, weight_init_mode):
         Takes hyperparameters as inputs
         Creates parameter permutations
     '''
+   
     permutations = np.array(np.meshgrid(learning_rate,drop_out, weight_init_mode)).T.reshape(-1,3)
 
-    for i in range(len(permutations)):
-        learning_rate = permutations[i, 0]
-        print('\n')
-        print('current lr: ', learning_rate)
-
-        drop_out = permutations[i, 1]
-        print('current drop_out: ', drop_out)
-
-        weight_init_mode = permutations[i, 2]
-        print('current mode: ', weight_init_mode)
-        print('\n')
-        return learning_rate.astype(np.float),drop_out.astype(np.float),weight_init_mode
-
-
+    return  permutations 
 
 
 def test_file_reader(test_path, as_gray = True, target_dim = (256,256)):

@@ -71,13 +71,13 @@ def get_items(list_of_lists, target_dim = (256,256)):
     return image_np   
 
 
-def find_parameters(learning_rate,drop_out, weight_init_mode):
+def find_parameters(learning_rate,drop_out, weight_init_mode, batch_size, optimizer):
     '''
         Takes hyperparameters as inputs
         Creates parameter permutations
     '''
    
-    permutations = np.array(np.meshgrid(learning_rate,drop_out, weight_init_mode)).T.reshape(-1,3)
+    permutations = np.array(np.meshgrid(learning_rate,drop_out, weight_init_mode, batch_size, optimizer )).T.reshape(-1,5)
 
     return  permutations 
 

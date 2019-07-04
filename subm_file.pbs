@@ -4,9 +4,9 @@
 # PBS -l place=excl
 #PBS -q gpu
 #PBS -l select=1:ncpus=40:ngpus=4
-#PBS -N non_overlapping_folds_test
+#PBS -N hyperparameter_tuning_test_1
 #PBS -A d167-s1137563
-#PBS -l walltime=0:40:0
+#PBS -l walltime=5:30:0
 
 
 

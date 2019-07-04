@@ -32,7 +32,7 @@ def iou_thresholded(y_true, y_pred, threshold=0.5, smooth=1.):
 
 
 
-def unet(pretrained_weights = None,input_size = (256,256,1),learning_rate=1e-4,drop_out=0.5, weight_init_mode='he_normal'):
+def unet(pretrained_weights = None,input_size = (256,256,1),learning_rate=1e-4,drop_out=0.5, weight_init_mode='he_normal', optimizer= 'Adam'):
     inputs = Input(input_size)
     conv1 = Conv2D(64, 3, activation = 'relu', padding = 'same', kernel_initializer = weight_init_mode)(inputs)
     conv1 = Conv2D(64, 3, activation = 'relu', padding = 'same', kernel_initializer = weight_init_mode)(conv1)
@@ -75,8 +75,10 @@ def unet(pretrained_weights = None,input_size = (256,256,1),learning_rate=1e-4,d
     conv10 = Conv2D(1, 1, activation = 'sigmoid')(conv9)
 
     model = Model(inputs = inputs, outputs = conv10)
-
-    model.compile(optimizer = Adam(lr = learning_rate), loss = 'binary_crossentropy', metrics = ['accuracy', iou, iou_thresholded])
+    if optimizer == 'Adam':
+        model.compile(optimizer = Adam(lr = learning_rate), loss = 'binary_crossentropy', metrics = ['accuracy', iou, iou_thresholded])
+    elif optimizer == 'SGD':
+        model.compile(optimizer = SGD(lr = learning_rate, momentum=0.9), loss = 'binary_crossentropy', metrics = ['accuracy', iou, iou_thresholded])
     
     #model.summary()
 

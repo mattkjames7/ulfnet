@@ -1,0 +1,16 @@
+#!/bin/bash --login
+#
+#PBS -q gpu
+#PBS -l select=1:ncpus=0:ngpus=1
+#PBS -N tf_gpu_test
+#PBS -A d167-s1137563
+#PBS -l walltime=0:25:0
+
+
+
+# Switch to current working directory
+cd $PBS_O_WORKDIR
+
+module load cuda
+module load singularity
+singularity exec --nv tfgpu.simg python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py

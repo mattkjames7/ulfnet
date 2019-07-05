@@ -1,0 +1,9 @@
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "/lustre/home/d167/s1137563/Paolo_repository/unet/main.py", line 2, in <module>
+    from data_helper import dataGenerator,load_data_Kfold, get_items, test_file_reader, saveResult, plot_imgs, plot_segm_history
+ImportError: cannot import name 'saveResult'

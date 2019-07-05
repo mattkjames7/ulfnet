@@ -86,12 +86,14 @@ def test_file_reader(test_path, as_gray = True, target_dim = (256,256)):
         yield img
 
 
-
+''' TO BE FIXED
 def saveResult(save_path,pred_im_array): 
     #saves images into specified directory
     for i,item in enumerate(pred_im_array):
         img = item[:,:,0]
         io.imsave(os.path.join(save_path,f"{i}_predict.png"),img)
+'''
+
         
 ''' 
 def plot_metrics(history_obj):
@@ -230,7 +232,7 @@ def plot_imgs(org_imgs,
     plt.savefig('predictions_overlay.png', format='png', dpi=1000)    
 
 
-
+'''TO BE FIXED
 
 def plot_segm_history(history, fold_number, metrics=['acc', 'val_acc', 'iou', 'val_iou'], losses=['loss', 'val_loss']):
     # summarize history for iou
@@ -255,3 +257,5 @@ def plot_segm_history(history, fold_number, metrics=['acc', 'val_acc', 'iou', 'v
     #plt.xticks(fontsize=35)
     plt.legend(losses, loc='center right', fontsize=15)
     plt.savefig(f'losses_vs_epochs_tf_{fold_number}.png', format='png', dpi=1000)
+
+'''

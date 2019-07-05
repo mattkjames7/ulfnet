@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/lustre/home/d167/s1137563/Paolo_repository/unet/main.py", line 1, in <module>
+    import unet_model
+  File "/lustre/home/d167/s1137563/Paolo_repository/unet/unet_model.py", line 2, in <module>
+    import skimage.io as io
+ImportError: No module named 'skimage'

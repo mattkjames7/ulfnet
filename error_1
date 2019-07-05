@@ -1,4 +1,0 @@
-  File "/lustre/home/d167/s1137563/Paolo_repository/unet/main.py", line 50
-    print(f'Training fold {fold_number}')
-                                       ^
-SyntaxError: invalid syntax

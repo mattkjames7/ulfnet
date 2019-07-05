@@ -4,7 +4,7 @@
 #PBS -l select=1:ncpus=10:ngpus=2
 #PBS -N tf_gpu_test
 #PBS -A d167-s1137563
-#PBS -l walltime=0:25:0
+#PBS -l walltime=0:10:0
 
 
 

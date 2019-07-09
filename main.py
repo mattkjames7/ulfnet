@@ -76,10 +76,19 @@ y_pred = model.predict(x_valid)
 
 images= plot_imgs(org_imgs=x_valid, mask_imgs=y_valid, pred_imgs=y_pred, nm_img_to_plot=9) # COMMENTED OUT BECAUSE OF GPU ERROR - TO BE FIXED
 
+def threshold_binarize(x, threshold=0.5):
+   # boolean_array=(x>threshold)*x
+    y = np.copy(x)    
+    #y = (x>= threshold).astype(int)
+    y[y >= threshold] = 1
+    return y
+
+
 
 time_before_predictions=time.time() 
 results = model.predict_generator(testGen,2313,verbose=1)
-saveResult(im_test,results)
+results_thresholded = threshold_binarize(results) 
+saveResult(im_test,results_thresholded)
  
 print("--- %s seconds (just for predictions) ---" % (time.time() - time_before_predictions))
 

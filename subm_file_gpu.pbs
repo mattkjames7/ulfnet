@@ -2,9 +2,9 @@
 #
 #PBS -q gpu
 #PBS -l select=1:ncpus=20:ngpus=1
-#PBS -N predictions_whole_dataset_tf_gpu
+#PBS -N predictions_whole_dataset_thresholded_tf_gpu
 #PBS -A d167-s1137563
-#PBS -l walltime=0:25:0
+#PBS -l walltime=0:20:0
 
 
 

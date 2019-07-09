@@ -1,0 +1,16 @@
+#!/bin/bash --login
+#
+#PBS -q gpu
+#PBS -l select=1:ncpus=20:ngpus=1
+#PBS -N hyperparameter_tuning_1_gpu
+#PBS -A d167-s1137563
+#PBS -l walltime=6:00:0
+
+
+
+# Switch to current working directory
+cd $PBS_O_WORKDIR
+
+module load cuda
+module load singularity
+singularity exec --nv tfgpu.simg python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py > output 2> error

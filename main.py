@@ -1,5 +1,5 @@
 import unet_model
-from data_helper import dataGenerator, find_parameters, load_data_Kfold, get_items, test_file_reader, saveResult, plot_imgs, plot_segm_history
+from data_helper import dataGenerator, find_parameters, load_data_Kfold, get_items # test_file_reader, plot_imgs, plot_segm_history
 import numpy as np
 from keras.callbacks import EarlyStopping, ReduceLROnPlateau
 import time

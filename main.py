@@ -29,6 +29,11 @@ seed = 1
 #Create folds
 x_train,x_validation,y_train,y_validation = load_data_Kfold(im_path,label_path,k)
 
+def get_callbacks(name_weights):
+    mcp_save = ModelCheckpoint(name_weights, save_best_only=True, monitor='val_loss', mode='min')
+    return [mcp_save]
+
+'''
 #Load model
 model = unet_model.unet()
 model_filename = 'segm_model_v0.h5'
@@ -38,9 +43,10 @@ callback_checkpoint = ModelCheckpoint(
     monitor='val_loss', 
     save_best_only=True,
 )
+'''
 
 cv_losses=[]
-cv_acc=[]
+#cv_acc=[]
 #CV and training
 for fold_number in range(k):
     x_training = get_items(x_train[fold_number])
@@ -48,21 +54,33 @@ for fold_number in range(k):
     x_valid = get_items(x_validation[fold_number])
     y_valid = get_items(y_validation[fold_number])
     print('Training fold' + str(fold_number))
-    generator = dataGenerator(BATCH_SIZE, x_training,y_training,data_gen_args,seed = 1) 
-    history=model.fit_generator(generator,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=10,verbose=1,validation_data = (x_valid,y_valid), callbacks=[callback_checkpoint])
-    figure = plot_segm_history(history, fold_number) #COMMENTED OUT BECAUSE OF GPU - TO BE FIXED
+    name_weights="final_model_fold" + str(fold_number) + "_weights.h5"
+    callbacks=get_callbacks(name_weights = name_weights)
+    generator = dataGenerator(BATCH_SIZE, x_training,y_training,data_gen_args,seed = 1)
+    model = unet_model.unet() 
+    history=model.fit_generator(generator,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=10,verbose=1,validation_data = (x_valid,y_valid), callbacks=callbacks)
+    figure = plot_segm_history(history, fold_number) 
+    scores = model.evaluate(x_valid, y_valid)
+    cv_losses.append(scores[0])
  
+ 
+ 
+best_fold= cv_losses.index(min(cv_losses))
+print('Best fold is ' + str(best_fold))
+
 testGen = test_file_reader(im_test)
 
 
-model.load_weights(model_filename)
+model.load_weights("final_model_fold" + str(best_fold) + "_weights.h5")
 y_pred = model.predict(x_valid)
 
 images= plot_imgs(org_imgs=x_valid, mask_imgs=y_valid, pred_imgs=y_pred, nm_img_to_plot=9) # COMMENTED OUT BECAUSE OF GPU ERROR - TO BE FIXED
 
 
-results = model.predict_generator(testGen,10,verbose=1)
-saveResult(im_test,results) # COMMENTED OUT DUE TO GPU - TO BE FIXED
+time_before_predictions=time.time() 
+results = model.predict_generator(testGen,2313,verbose=1)
+saveResult(im_test,results)
+ 
+print("--- %s seconds (just for predictions) ---" % (time.time() - time_before_predictions))
 
-
-print("--- %s seconds ---" % (time.time() - start_time))
+print("--- %s seconds (total execution time) ---" % (time.time() - start_time))

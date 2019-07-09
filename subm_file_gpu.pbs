@@ -1,10 +1,10 @@
 #!/bin/bash --login
 #
 #PBS -q gpu
-#PBS -l select=1:ncpus=30:ngpus=4
-#PBS -N tf_gpu_test
+#PBS -l select=1:ncpus=20:ngpus=1
+#PBS -N predictions_whole_dataset_tf_gpu
 #PBS -A d167-s1137563
-#PBS -l walltime=0:10:0
+#PBS -l walltime=0:25:0
 
 
 

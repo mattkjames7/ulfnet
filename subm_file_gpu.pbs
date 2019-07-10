@@ -1,8 +1,8 @@
 #!/bin/bash --login
 #
 #PBS -q gpu
-#PBS -l select=1:ncpus=20:ngpus=1
-#PBS -N hyperparameter_tuning_1_gpu
+#PBS -l select=1:ncpus=40:ngpus=1
+#PBS -N hyperparameter_tuning_test_2
 #PBS -A d167-s1137563
 #PBS -l walltime=6:00:0
 

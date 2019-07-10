@@ -10,9 +10,9 @@ import tensorflow as tf
 start_time=time.time() 
 
 
-config = tf.ConfigProto()
-config.gpu_options.allow_growth = True
-sess = tf.Session(config=config)
+#config = tf.ConfigProto()
+#config.gpu_options.allow_growth = True
+#sess = tf.Session(config=config)
 
 data_gen_args = dict(rotation_range=0.2,
                     width_shift_range=0.05,
@@ -70,6 +70,10 @@ permutations = find_parameters(learning_rate,drop_out, weight_init_mode, batch_s
 
 #Model hyperparameter selection loop
 for idx_perms in range(len(permutations)):
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+    sess = tf.Session(config=config)
+
     print('Permutation number: ' +str(idx_perms)) 
     
     cv_losses_temp = []
@@ -112,7 +116,7 @@ for idx_perms in range(len(permutations)):
         scores = model.evaluate(x_valid, y_valid)
         cv_losses_temp.append(scores[0])
     cv_losses.append(np.array(cv_losses_temp).mean())
-
+    tf.reset_default_graph()
 df = pd.DataFrame({'learning rate':permutations[:,0],'drop_out':permutations[:,1],'weight_init':permutations[:,2],'batch_size':permutations[:,3],'optimizer':permutations[:,4], 'val_loss':cv_losses}) 
  
 df.to_csv(os.path.join("/lustre/home/d167/s1137563/Paolo_repository/unet","output_file.csv"),encoding='utf-8', index=False)

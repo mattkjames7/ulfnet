@@ -5,9 +5,14 @@ from keras.callbacks import EarlyStopping, ReduceLROnPlateau
 import time
 import pandas as pd
 import os
+import tensorflow as tf
 
 start_time=time.time() 
 
+
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+sess = tf.Session(config=config)
 
 data_gen_args = dict(rotation_range=0.2,
                     width_shift_range=0.05,
@@ -50,7 +55,7 @@ optimizer=['SGD', 'Adam']
 
 ###CHECK OUTPUT FILE FROM PREVIOUS RUNS TO SEE IF YOU SHOULD CHANGED THESE CALLBACKS
 
-early_stop = EarlyStopping(monitor='val_loss', patience=2, verbose=1, min_delta=0.1)
+early_stop = EarlyStopping(monitor='val_loss', patience=1, verbose=1, min_delta=0.1)
 #reduce_lr = ReduceLROnPlateau(factor=0.3,patience=2, min_lr=0.000001, verbose=1)
 callbacks=[early_stop]
 

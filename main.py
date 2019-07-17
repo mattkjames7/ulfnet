@@ -6,6 +6,7 @@ import time
 import pandas as pd
 import os
 import tensorflow as tf
+from keras import backend as K 
 
 start_time=time.time() 
 
@@ -114,7 +115,7 @@ for idx_perms in range(len(permutations)):
     #print(f'current batch size: {curr_batch_size}')
     #print(f'current optimizer: {curr_optimizer}')
     #print('\n')
-    model = unet_model.unet(learning_rate=curr_lr.astype(np.float),drop_out=curr_drop_out.astype(np.float), optimizer = curr_optimizer)    
+   #model = unet_model.unet(learning_rate=curr_lr.astype(np.float),drop_out=curr_drop_out.astype(np.float), optimizer = curr_optimizer)    
         
     #Model evaluation loop
     for fold_number in range(k):
@@ -125,12 +126,24 @@ for idx_perms in range(len(permutations)):
         y_valid = get_items(y_validation[fold_number])
         generator = dataGenerator(curr_batch_size_np, x_training,y_training,data_gen_args,seed = SEED)
         value= int(len(x_training)/curr_batch_size_np)
-        #print(value)
-        history = model.fit_generator(generator,steps_per_epoch= value,epochs=5,verbose=1,validation_data = (x_valid,y_valid), callbacks=callbacks) #callbacks=callbacks)
+        model = unet_model.unet(learning_rate=curr_lr.astype(np.float),drop_out=curr_drop_out.astype(np.float), optimizer = curr_optimizer)        
+#print(value)
+        history = model.fit_generator(generator,steps_per_epoch= value,epochs=1,verbose=1,validation_data = (x_valid,y_valid), callbacks=callbacks) #callbacks=callbacks)
         scores = model.evaluate(x_valid, y_valid)
         cv_losses_temp.append(scores[0])
-    cv_losses.append(np.array(cv_losses_temp).mean())
-    tf.reset_default_graph()
+        K.clear_session()
+        del model
+        del x_training
+        del y_training
+        del x_valid
+        del y_valid
+    cv_losses.append(np.array(cv_losses_temp).mean())  
+
+
+
+
+#cv_losses.append(np.array(cv_losses_temp).mean())
+ #   tf.reset_default_graph()
 #print("--- %s seconds ---" % (time.time() - time_before_loop))
 
 df = pd.DataFrame({'learning rate':permutations[:,0],'drop_out':permutations[:,1],'batch_size':permutations[:,2],'optimizer':permutations[:,3], 'val_loss':cv_losses}) 

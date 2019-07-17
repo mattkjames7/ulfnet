@@ -1,10 +1,10 @@
 #!/bin/bash --login
 #
 #PBS -q gpu
-#PBS -l select=1:ncpus=40:ngpus=1
-#PBS -N hyperparameter_tuning_test_2
+#PBS -l select=1:ncpus=10:ngpus=1
+#PBS -N parameter_tuning_small_test
 #PBS -A d167-s1137563
-#PBS -l walltime=6:00:0
+#PBS -l walltime=1:00:0
 
 
 
@@ -13,4 +13,11 @@ cd $PBS_O_WORKDIR
 
 module load cuda
 module load singularity
+#nvidia-smi
+#while true; 
+#do nvidia-smi --query-gpu=utilization.gpu --format=csv >> gpu_utillization.log; sleep 1;
+#singularity exec --nv tfgpu.simg python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py
+#done 
+#singularity exec --nv tfgpu.simg python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py
+#nvidia-smi
 singularity exec --nv tfgpu.simg python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py > output 2> error

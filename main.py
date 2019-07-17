@@ -128,7 +128,7 @@ for idx_perms in range(len(permutations)):
         value= int(len(x_training)/curr_batch_size_np)
         model = unet_model.unet(learning_rate=curr_lr.astype(np.float),drop_out=curr_drop_out.astype(np.float), optimizer = curr_optimizer)        
 #print(value)
-        history = model.fit_generator(generator,steps_per_epoch= value,epochs=1,verbose=1,validation_data = (x_valid,y_valid), callbacks=callbacks) #callbacks=callbacks)
+        history = model.fit_generator(generator,steps_per_epoch= value,epochs=3,verbose=1,validation_data = (x_valid,y_valid), callbacks=callbacks) #callbacks=callbacks)
         scores = model.evaluate(x_valid, y_valid)
         cv_losses_temp.append(scores[0])
         K.clear_session()

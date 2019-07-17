@@ -2,9 +2,9 @@
 #
 #PBS -q gpu
 #PBS -l select=1:ncpus=10:ngpus=1
-#PBS -N parameter_tuning_small_test
+#PBS -N parameter_tuning_small_test_3_epochs
 #PBS -A d167-s1137563
-#PBS -l walltime=1:00:0
+#PBS -l walltime=0:30:0
 
 
 

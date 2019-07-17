@@ -1,24 +1,23 @@
 #!/bin/bash --login
 #
-# PBS -l select=1:ncpus=36
-# PBS -l place=excl
 #PBS -q gpu
-#PBS -l select=1:ncpus=40:ngpus=4
-#PBS -N hyperparameter_tuning_test_1
+#PBS -l select=1:ncpus=10:ngpus=1
+#PBS -N parameter_tuning_small_test_3_epochs
 #PBS -A d167-s1137563
-#PBS -l walltime=5:30:0
+#PBS -l walltime=0:30:0
 
 
 
 # Switch to current working directory
 cd $PBS_O_WORKDIR
 
-# Run the parallel program
-#module load anaconda/python3
-#/lustre/home/d167/s1137563/ENTER/condabin/conda activate unet 
-#/lustre/home/d167/s1137563/ENTER/bin/python3 main.py
-module load miniconda 
-/lustre/home/d167/s1137563/ENTER/bin/python3 main.py > output 2> error
-
-
-
+module load cuda
+module load singularity
+#nvidia-smi
+#while true; 
+#do nvidia-smi --query-gpu=utilization.gpu --format=csv >> gpu_utillization.log; sleep 1;
+#singularity exec --nv tfgpu.simg python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py
+#done 
+#singularity exec --nv tfgpu.simg python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py
+#nvidia-smi
+singularity exec --nv tfgpu.simg python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py > output 2> error

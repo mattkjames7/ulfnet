@@ -4,11 +4,11 @@ from data_helper import dataGenerator,load_data_Kfold, get_items, test_file_read
 import numpy as np
 from keras.callbacks import ModelCheckpoint
 import time
-
+from keras import backend as K 
 start_time=time.time() 
 
 
-BATCH_SIZE = 2
+BATCH_SIZE = 4
         
 data_gen_args = dict(rotation_range=0.2,
                     width_shift_range=0.05,
@@ -45,7 +45,7 @@ callback_checkpoint = ModelCheckpoint(
 )
 '''
 
-cv_losses=[]
+#cv_losses=[]
 #cv_acc=[]
 #CV and training
 for fold_number in range(k):
@@ -61,10 +61,16 @@ for fold_number in range(k):
     history=model.fit_generator(generator,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=10,verbose=1,validation_data = (x_valid,y_valid), callbacks=callbacks)
     figure = plot_segm_history(history, fold_number) 
     scores = model.evaluate(x_valid, y_valid)
-    cv_losses.append(scores[0])
+    K.clear_session()
+    del model
+    del x_training
+    del y_training
+    del x_valid
+    del y_valid
+    #cv_losses.append(scores[0])
  
  
- 
+''' 
 best_fold= cv_losses.index(min(cv_losses))
 print('Best fold is ' + str(best_fold))
 
@@ -93,3 +99,5 @@ saveResult(im_test,results_thresholded)
 print("--- %s seconds (just for predictions) ---" % (time.time() - time_before_predictions))
 
 print("--- %s seconds (total execution time) ---" % (time.time() - start_time))
+
+'''

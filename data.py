@@ -2,7 +2,7 @@ from __future__ import print_function
 from keras.preprocessing.image import ImageDataGenerator
 import numpy as np 
 import os
-import glob
+from glob import glob
 import skimage.io as io
 import skimage.transform as trans
 
@@ -117,8 +117,21 @@ def labelVisualize(num_class,color_dict,img):
     return img_out / 255
 
 
-
-def saveResult(save_path,npyfile,flag_multi_class = False,num_class = 2):
-    for i,item in enumerate(npyfile):
-        img = labelVisualize(num_class,COLOR_DICT,item) if flag_multi_class else item[:,:,0]
-        io.imsave(os.path.join(save_path,"%d_predict.png"%i),img)
+def test_file_reader(test_path, as_gray = True, target_dim = (256,256)):
+    '''
+        Reads path, resized and returns all images on specified folder
+    '''
+    extensions = glob(os.path.join(test_path,'*.jpg'))
+    for filename in extensions:
+        img = io.imread(filename,as_gray = as_gray)
+        img = trans.resize(img, target_dim, mode='constant')
+        img = np.reshape(img,img.shape+(1,))
+        img = np.reshape(img,(1,)+img.shape)
+        yield img
+        
+def saveResult(save_path,pred_im_array): 
+    #saves images into specified directory
+    for i,item in enumerate(pred_im_array):
+        img = item[:,:,0]
+       # io.imsave(os.path.join(save_path,f"{i}_predict.png"),img)
+        io.imsave(os.path.join(save_path,str(i)+"_predict.png"),img)

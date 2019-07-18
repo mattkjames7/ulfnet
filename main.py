@@ -1,5 +1,7 @@
-from model import *
-from data import *
+import unet_model 
+from data import test_file_reader, trainGenerator, saveResult
+import keras
+from keras.callbacks import ModelCheckpoint
 
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
@@ -11,12 +13,25 @@ data_gen_args = dict(rotation_range=0.2,
                     zoom_range=0.05,
                     horizontal_flip=True,
                     fill_mode='nearest')
-myGene = trainGenerator(2,'data/membrane/train','image','label',data_gen_args,save_to_dir = None)
+                    
+BATCH_SIZE=2
+myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train','image','label',data_gen_args,save_to_dir = None)
 
-model = unet()
+model = unet_model.unet()
 model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
-model.fit_generator(myGene,steps_per_epoch=700,epochs=1,callbacks=[model_checkpoint])
+model.fit_generator(myGene,steps_per_epoch=89,epochs=10,callbacks=[model_checkpoint])
 
-testGene = testGenerator("data/membrane/test")
-results = model.predict_generator(testGene,30,verbose=1)
-saveResult("data/membrane/test",results)
+im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
+
+testGene = test_file_reader(im_test)
+results = model.predict_generator(testGene,2313,verbose=1)
+
+def threshold_binarize(x, threshold=0.5):
+   # boolean_array=(x>threshold)*x
+    y = np.copy(x)    
+    #y = (x>= threshold).astype(int)
+    y[y >= threshold] = 1
+    return y
+
+results_thresholded = threshold_binarize(results) 
+saveResult(im_test,results_thresholded)

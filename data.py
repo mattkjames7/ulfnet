@@ -5,6 +5,8 @@ import os
 from glob import glob
 import skimage.io as io
 import skimage.transform as trans
+import matplotlib.pyplot as plt
+
 
 Sky = [128,128,128]
 Building = [128,0,0]
@@ -135,3 +137,19 @@ def saveResult(save_path,pred_im_array):
         img = item[:,:,0]
        # io.imsave(os.path.join(save_path,f"{i}_predict.png"),img)
         io.imsave(os.path.join(save_path,str(i)+"_predict.png"),img)
+        
+
+def plot_segm_history(history, things_to_plot=['iou', 'loss']):
+    
+    plt.figure(figsize=(12,6))
+    for metric_or_loss in things_to_plot:
+        plt.plot(history.history[metric_or_loss], linewidth=3)
+   
+    plt.suptitle('Plot of Training Loss and IoU', fontsize=20)
+    plt.ylabel('Value', fontsize=20)
+    plt.xlabel('Number of Epochs', fontsize=20)
+
+    plt.legend(things_to_plot, loc='center right', fontsize=15)
+
+    plt.savefig('Plot_training_loss_and_iou.png', format='png', dpi=1000)
+ 

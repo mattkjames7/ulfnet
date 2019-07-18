@@ -9,6 +9,11 @@ from keras.optimizers import *
 from keras.callbacks import ModelCheckpoint, LearningRateScheduler
 from keras import backend as keras
 
+def iou(y_true, y_pred, smooth=1.):
+    y_true_f = keras.flatten(y_true)
+    y_pred_f = keras.flatten(y_pred)
+    intersection = keras.sum(y_true_f * y_pred_f)
+    return (intersection + smooth) / (keras.sum(y_true_f) + keras.sum(y_pred_f) - intersection + smooth)
 
 def unet(pretrained_weights = None,input_size = (256,256,1)):
     inputs = Input(input_size)
@@ -54,7 +59,7 @@ def unet(pretrained_weights = None,input_size = (256,256,1)):
 
 
     model = Model(inputs = inputs, outputs = conv10)
-    model.compile(optimizer = Adam(lr = 1e-4), loss = 'binary_crossentropy', metrics = ['accuracy'])
+    model.compile(optimizer = Adam(lr = 1e-4), loss = 'binary_crossentropy', metrics = ['accuracy', iou])
     
     #model.summary()
 

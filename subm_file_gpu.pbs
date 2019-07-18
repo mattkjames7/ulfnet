@@ -2,9 +2,9 @@
 #
 #PBS -q gpu
 #PBS -l select=1:ncpus=10:ngpus=1
-#PBS -N parameter_tuning_small_test_3_epochs
+#PBS -N cross_validation_check_10_epochs_more_parameter_values_
 #PBS -A d167-s1137563
-#PBS -l walltime=0:30:0
+#PBS -l walltime=1:30:0
 
 
 

@@ -8,6 +8,12 @@ import os
 import tensorflow as tf
 from keras import backend as K 
 
+
+
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+sess = tf.Session(config=config)
+
 start_time=time.time() 
 
 
@@ -47,11 +53,11 @@ k = 2
 SEED = 1
 
 #Network hyperparameters
-learning_rate = [0.0001,0.001]
+learning_rate = [0.0001,0.001, 0.01]
 drop_out = 0.5
 #weight_init_mode = ['he_normal','he_uniform','glorot_normal','glorot_uniform','lecun_uniform','normal','uniform']
 batch_size = [2,4,16,32]
-optimizer= ['SGD', 'Adam']
+optimizer= ['SGD', 'Adam', 'RMSprop']
 
 
 
@@ -132,6 +138,7 @@ for idx_perms in range(len(permutations)):
         scores = model.evaluate(x_valid, y_valid)
         cv_losses_temp.append(scores[0])
         K.clear_session()
+        tf.reset_default_graph()
         del model
         del x_training
         del y_training

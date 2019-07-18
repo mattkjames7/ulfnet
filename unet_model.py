@@ -79,6 +79,8 @@ def unet(pretrained_weights = None,input_size = (256,256,1),learning_rate=1e-4,d
         model.compile(optimizer = Adam(lr = learning_rate), loss = 'binary_crossentropy', metrics = ['accuracy', iou, iou_thresholded])
     elif optimizer == 'SGD':
         model.compile(optimizer = SGD(lr = learning_rate, momentum=0.9), loss = 'binary_crossentropy', metrics = ['accuracy', iou, iou_thresholded])
+    elif optimizer == 'RMSprop':
+        model.compile(optimizer = RMSprop(lr = learning_rate), loss = 'binary_crossentropy', metrics = ['accuracy', iou, iou_thresholded])
     
     #model.summary()
 

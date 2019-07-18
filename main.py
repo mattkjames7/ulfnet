@@ -2,6 +2,7 @@ import unet_model
 from data import test_file_reader, trainGenerator, saveResult
 import keras
 from keras.callbacks import ModelCheckpoint
+import numpy as np
 
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 

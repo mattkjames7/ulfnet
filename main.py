@@ -60,7 +60,8 @@ for fold_number in range(k):
     model = unet_model.unet() 
     history=model.fit_generator(generator,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=10,verbose=1,validation_data = (x_valid,y_valid), callbacks=callbacks)
     #figure = plot_segm_history(history, fold_number) 
-    scores = model.evaluate(x_valid, y_valid)
+   # scores = model.evaluate(x_valid, y_valid)
+    #print(scores)
     K.clear_session()
     del model
     del x_training

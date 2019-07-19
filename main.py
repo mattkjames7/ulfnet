@@ -23,7 +23,7 @@ myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/
 
 model = unet_model.unet()
 model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
-history = model.fit_generator(myGene,steps_per_epoch=300,epochs=1,callbacks=[model_checkpoint])
+history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=3,callbacks=[model_checkpoint])
 figure = plot_segm_history(history)
 
 

@@ -23,7 +23,7 @@ im_path = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train/
 label_path = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train/label'
 im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
 
-k = 5
+k = 2
 seed = 1
 
 #Create folds

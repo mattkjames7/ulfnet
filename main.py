@@ -8,7 +8,7 @@ from keras import backend as K
 start_time=time.time() 
 
 
-BATCH_SIZE = 5
+BATCH_SIZE = 2
         
 data_gen_args = dict(rotation_range=0.2,
                     width_shift_range=0.05,
@@ -23,7 +23,7 @@ im_path = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train/
 label_path = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train/label'
 im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
 
-k = 2
+k = 10
 seed = 1
 
 #Create folds

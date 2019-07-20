@@ -84,7 +84,7 @@ def get_items(list_of_lists, target_dim = (512,512)):
     return image_np   
 
 
-
+'''
     #NEED TO ADD IOU AND VAL IOU AS METRICS
 def plot_segm_history(history, fold_number, metrics=['acc', 'val_acc', 'iou', 'val_iou'], losses=['loss', 'val_loss']):
     # summarize history for iou
@@ -109,7 +109,7 @@ def plot_segm_history(history, fold_number, metrics=['acc', 'val_acc', 'iou', 'v
     #plt.xticks(fontsize=35)
     plt.legend(losses, loc='center right', fontsize=15)
     plt.savefig(f'losses_vs_epochs_tf_{fold_number}.png', format='png', dpi=1000)
-
+'''
 
 def mask_to_red(mask):
     '''
@@ -367,10 +367,11 @@ def test_file_reader(test_path, as_gray = True, target_dim = (512,512)):
         img = np.reshape(img,(1,)+img.shape)
         yield img
         
-        
+    '''    
 def saveResult(save_path,pred_im_array): 
     #saves images into specified directory
     for i,item in enumerate(pred_im_array):
         img = item[:,:,0]
         io.imsave(os.path.join(save_path,f"{i}_predict.png"),img)
 
+'''

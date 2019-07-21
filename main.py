@@ -26,10 +26,12 @@ history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=10,ca
 #figure = plot_segm_history(history)
 
 
-im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
+#im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
+im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data_large/test'
 
 
-NUM_TEST_IMAGES=2313
+#NUM_TEST_IMAGES=2313
+NUM_TEST_IMAGES=10
 
 testGene = testGenerator(im_test, NUM_TEST_IMAGES)
 results = model.predict_generator(testGene,NUM_TEST_IMAGES,verbose=1)

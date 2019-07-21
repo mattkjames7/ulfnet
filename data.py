@@ -83,7 +83,7 @@ def trainGenerator(batch_size,train_path,image_folder,mask_folder,aug_dict,image
         yield (img,mask)
 
 
-
+'''
 def testGenerator(test_path,num_image = 30,target_size = (256,256),flag_multi_class = False,as_gray = True):
     for i in range(num_image):
         img = io.imread(os.path.join(test_path,"%d.png"%i),as_gray = as_gray)
@@ -92,7 +92,7 @@ def testGenerator(test_path,num_image = 30,target_size = (256,256),flag_multi_cl
         img = np.reshape(img,img.shape+(1,)) if (not flag_multi_class) else img
         img = np.reshape(img,(1,)+img.shape)
         yield img
-
+'''
 
 def geneTrainNpy(image_path,mask_path,flag_multi_class = False,num_class = 2,image_prefix = "image",mask_prefix = "mask",image_as_gray = True,mask_as_gray = True):
     image_name_arr = glob.glob(os.path.join(image_path,"%s*.png"%image_prefix))
@@ -130,14 +130,16 @@ def test_file_reader(test_path, as_gray = True, target_dim = (256,256)):
         img = np.reshape(img,img.shape+(1,))
         img = np.reshape(img,(1,)+img.shape)
         yield img
-        
+
+
+'''        
 def saveResult(save_path,pred_im_array): 
     #saves images into specified directory
     for i,item in enumerate(pred_im_array):
         img = item[:,:,0]
        # io.imsave(os.path.join(save_path,f"{i}_predict.png"),img)
         io.imsave(os.path.join(save_path,str(i)+"_predict.png"),img)
-        
+'''        
 
 def plot_segm_history(history, things_to_plot=['iou', 'loss']):
     
@@ -152,4 +154,36 @@ def plot_segm_history(history, things_to_plot=['iou', 'loss']):
     plt.legend(things_to_plot, loc='center right', fontsize=15)
 
     plt.savefig('Plot_training_loss_and_iou.png', format='png', dpi=1000)
+
+
+def testGenerator(test_path,num_image,target_size = (256,256),as_gray = True):
+    for i in range(num_image):
+        img = io.imread(os.path.join(test_path,"%d.jpg"%i),as_gray = as_gray)
+        #img = img / 255
+        img = trans.resize(img,target_size)
+        img = np.reshape(img,img.shape+(1,))
+        img = np.reshape(img,(1,)+img.shape)
+        yield img
+     
+def saveResult(save_path,pred_im_array): 
+    #saves images into specified directory
+    for i,item in enumerate(pred_im_array):
+        img = item[:,:,0]
+       # io.imsave(os.path.join(save_path,f"{i}_predict.png"),img)
+        io.imsave(os.path.join(save_path,str(i)+"_predict.png"),img)
+
+def threshold_binarize(x, threshold=0.5):
+   
+    y = np.copy(x)    
+    y[y >= threshold] = 1
+    return y
+
+def saveResultThresholded(save_path,pred_im_array,threshold):
+    #saves images into specified directory
+    results_thresholded = threshold_binarize(pred_im_array, threshold)
+    for i,item in enumerate(results_thresholded):
+        img = item[:,:,0]
+       # io.imsave(os.path.join(save_path,f"{i}_predict.png"),img)
+        io.imsave(os.path.join(save_path,str(i)+"_predict_thresholded_" + str(threshold) + ".png"),img)
+
  

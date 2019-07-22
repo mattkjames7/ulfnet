@@ -1,5 +1,5 @@
 import unet_model 
-from data import trainGenerator, testGenerator, saveResult, saveResultThresholded
+from data import trainGenerator, testGenerator, saveResult, saveResultThresholded, threshold_binarize, plot_imgs
 import keras
 from keras.callbacks import ModelCheckpoint
 import numpy as np
@@ -22,7 +22,7 @@ myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/
     
 model = unet_model.unet()
 model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
-history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=10,callbacks=[model_checkpoint])
+history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=1,callbacks=[model_checkpoint])
 #figure = plot_segm_history(history)
 
 
@@ -30,8 +30,8 @@ im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
 #im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data_large/test'
 
 
-NUM_TEST_IMAGES=2313
-#NUM_TEST_IMAGES=10
+#NUM_TEST_IMAGES=2313
+NUM_TEST_IMAGES=12
 
 
 
@@ -42,16 +42,55 @@ results = model.predict_generator(testGene,NUM_TEST_IMAGES,verbose=1)
 #THRESHOLD=0.5
 
 saveResult(im_test,results)
-saveResultThresholded(im_test,results, threshold=0.4)
-saveResultThresholded(im_test,results, threshold=0.5)
-saveResultThresholded(im_test,results, threshold=0.6)
+#saveResultThresholded(im_test,results, threshold=0.4)
+#saveResultThresholded(im_test,results, threshold=0.5)
+#saveResultThresholded(im_test,results, threshold=0.6)
 
 
 ### PREDICTION OVERLAY
 
 ## TEST IMAGE - GROUND TRUTH IMAGE - PREDICTION IMAGE - OVERLAY##
+ground_truth_path='/lustre/home/d167/s1137563/Paolo_repository/unet/ground_truth_data'
+#ground_truth_data=testGenerator(ground_truth_path, NUM_TEST_IMAGES)
 
-images= plot_imgs(org_imgs=testGene, mask_imgs=y_pred, pred_imgs=y_pred_thresholded, nm_img_to_plot=9)
+results_thresholded = threshold_binarize(results, 0.5)
+
+
+#my_array = np.empty(12)
+#for i, el in enumerate(testGene): my_array[i] = el
+#print(my_array)
+#print(my_array.shape)
+#next(testGene)
+
+
+from skimage import io
+import os
+import skimage.transform as trans
+'''
+def numpy_array_generator(path, num_image):
+    im_list=[]
+    for i in range(num_image):
+        img = io.imread(os.path.join(path,"%d.jpg"%i),as_gray = True)
+        img = trans.resize(img, (256,256))
+        img = np.reshape(img,img.shape+(1,))
+        img = np.reshape(img,(1,)+img.shape)
+        im_list.append(np.asarray(img))
+        np_ar= np.array(im_list)
+        return np_ar
+
+test_image_np_ar=numpy_array_generator(im_test,12)
+ground_truth_image_np_ar=numpy_array_generator(ground_truth_path,12)
+
+print(test_image_np_ar.shape)
+print(ground_truth_image_np_ar.shape)
+print(results_thresholded.shape)
+'''
+
+x = numpy.stack(testGene)
+print(x.shape)
+
+#images = plot_imgs(org_imgs=test_image_np_ar, mask_imgs=ground_truth_image_np_ar, pred_imgs=results_thresholded, nm_img_to_plot=12)
+
 
 
 '''
@@ -60,7 +99,7 @@ def threshold_binarize(x, threshold=0.5):
     y = np.copy(x)    
     #y = (x>= threshold).astype(int)
     y[y >= threshold] = 1
-    return y
+    return y///
 
 results_thresholded = threshold_binarize(results) 
 '''

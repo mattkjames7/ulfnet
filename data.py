@@ -306,7 +306,7 @@ def plot_imgs(org_imgs,
             axes[m, 2].imshow(pred_imgs[im_id], cmap=get_cmap(pred_imgs))
             axes[m, 2].set_axis_off()
             axes[m, 3].imshow(pred_imgs[im_id], cmap=get_cmap(pred_imgs))
-            axes[m, 3].imshow(mask_to_red(zero_pad_mask(org_imgs[im_id], desired_size=org_imgs_size)), cmap=get_cmap(org_imgs), alpha=alpha)
+            axes[m, 3].imshow(mask_to_red(zero_pad_mask(mask_imgs[im_id], desired_size=org_imgs_size)), cmap=get_cmap(mask_imgs), alpha=alpha)
             axes[m, 3].set_axis_off()
         else:
             axes[m, 2].imshow(org_imgs[im_id], cmap=get_cmap(org_imgs))

@@ -26,12 +26,14 @@ history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=10,ca
 #figure = plot_segm_history(history)
 
 
-#im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
-im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data_large/test'
+im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
+#im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data_large/test'
 
 
-#NUM_TEST_IMAGES=2313
-NUM_TEST_IMAGES=10
+NUM_TEST_IMAGES=2313
+#NUM_TEST_IMAGES=10
+
+
 
 testGene = testGenerator(im_test, NUM_TEST_IMAGES)
 results = model.predict_generator(testGene,NUM_TEST_IMAGES,verbose=1)
@@ -45,7 +47,11 @@ saveResultThresholded(im_test,results, threshold=0.5)
 saveResultThresholded(im_test,results, threshold=0.6)
 
 
+### PREDICTION OVERLAY
 
+## TEST IMAGE - GROUND TRUTH IMAGE - PREDICTION IMAGE - OVERLAY##
+
+images= plot_imgs(org_imgs=testGene, mask_imgs=y_pred, pred_imgs=y_pred_thresholded, nm_img_to_plot=9)
 
 
 '''

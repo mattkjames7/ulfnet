@@ -8,39 +8,39 @@ import tensorflow as tf
 
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
-
-data_gen_args = dict(rotation_range=0.2,
-                        width_shift_range=0.05,
-                        height_shift_range=0.05,
-                        shear_range=0.05,
-                        zoom_range=0.05,
-                        horizontal_flip=True,
-                        fill_mode='nearest')
-                        
-BATCH_SIZE=2
-myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train','image','label',data_gen_args,save_to_dir = None)
+with tf.device('/gpu:3'):
+    data_gen_args = dict(rotation_range=0.2,
+                            width_shift_range=0.05,
+                            height_shift_range=0.05,
+                            shear_range=0.05,
+                            zoom_range=0.05,
+                            horizontal_flip=True,
+                            fill_mode='nearest')
+                            
+    BATCH_SIZE=2
+    myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train','image','label',data_gen_args,save_to_dir = None)
+        
+    model = unet_model.unet()
+    model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
+    history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=5,callbacks=[model_checkpoint])
+    #figure = plot_segm_history(history)
     
-model = unet_model.unet()
-model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
-history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=10,callbacks=[model_checkpoint])
-#figure = plot_segm_history(history)
-
-
-im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
-
-
-NUM_TEST_IMAGES=2313
-
-testGene = testGenerator(im_test, NUM_TEST_IMAGES)
-results = model.predict_generator(testGene,NUM_TEST_IMAGES,verbose=1)
-
-
-#THRESHOLD=0.5
-
-saveResult(im_test,results)
-saveResultThresholded(im_test,results, threshold=0.4)
-saveResultThresholded(im_test,results, threshold=0.5)
-saveResultThresholded(im_test,results, threshold=0.6)
+    
+    im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
+    
+    
+    NUM_TEST_IMAGES=2313
+    
+    testGene = testGenerator(im_test, NUM_TEST_IMAGES)
+    results = model.predict_generator(testGene,NUM_TEST_IMAGES,verbose=1)
+    
+    
+    #THRESHOLD=0.5
+    
+    saveResult(im_test,results)
+    saveResultThresholded(im_test,results, threshold=0.4)
+    saveResultThresholded(im_test,results, threshold=0.5)
+    saveResultThresholded(im_test,results, threshold=0.6)
 
 
 

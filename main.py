@@ -22,7 +22,7 @@ with tf.device('/gpu:3'):
         
     model = unet_model.unet()
     model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
-    history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=5,callbacks=[model_checkpoint])
+    history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=7,callbacks=[model_checkpoint])
     #figure = plot_segm_history(history)
     
     

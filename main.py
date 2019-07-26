@@ -41,7 +41,7 @@ print(" %s seconds for initialization---" % (end_init - start_time))
 
 start_training= time.time()
 
-history = parallel_model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=2,callbacks=[model_checkpoint],use_multiprocessing=False)
+history = parallel_model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=10,callbacks=[model_checkpoint],use_multiprocessing=False)
 
 end_training= time.time()
 

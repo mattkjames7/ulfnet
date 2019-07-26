@@ -46,7 +46,35 @@ def adjustData(img,mask,flag_multi_class,num_class):
     return (img,mask)
 
 
+import threading
 
+class threadsafe_iter:
+    """Takes an iterator/generator and makes it thread-safe by
+    serializing call to the `next` method of given iterator/generator.
+    """
+    def __init__(self, it):
+        self.it = it
+        self.lock = threading.Lock()
+
+    def __iter__(self):
+        return self
+
+    def __next__(self): # Py3
+        with self.lock:
+            return next(self.it)
+    #def __next__(self): # Py3
+     #   return next(self.it)
+
+
+def threadsafe_generator(f):
+    """A decorator that takes a generator function and makes it thread-safe.
+    """
+    def g(*a, **kw):
+        return threadsafe_iter(f(*a, **kw))
+    return g
+
+
+@threadsafe_generator
 def trainGenerator(batch_size,train_path,image_folder,mask_folder,aug_dict,image_color_mode = "grayscale",
                     mask_color_mode = "grayscale",image_save_prefix  = "image",mask_save_prefix  = "mask",
                     flag_multi_class = False,num_class = 2,save_to_dir = None,target_size = (256,256),seed = 1):

@@ -1,4 +1,4 @@
-import unet_model 
+#import unet_model 
 from data import trainGenerator, testGenerator, saveResult, saveResultThresholded, threshold_binarize, plot_imgs
 import keras
 from keras.callbacks import ModelCheckpoint
@@ -6,7 +6,9 @@ import numpy as np
 from keras import backend as K
 import tensorflow as tf
 import time
-
+from keras.utils import multi_gpu_model
+from unet_model import unet, iou
+from keras.optimizers import *
 
 
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
@@ -15,7 +17,7 @@ import time
 
 start_time= time.time()
 
-
+BATCH_SIZE=2
 
 data_gen_args = dict(rotation_range=0.2,
                         width_shift_range=0.05,
@@ -25,10 +27,12 @@ data_gen_args = dict(rotation_range=0.2,
                         horizontal_flip=True,
                         fill_mode='nearest')
                         
-BATCH_SIZE=2
+
 myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train','image','label',data_gen_args,save_to_dir = None)
     
-model = unet_model.unet()
+model = unet()
+parallel_model = multi_gpu_model(model, gpus=2, cpu_merge=False)
+parallel_model.compile(optimizer = Adam(lr = 1e-4), loss = 'binary_crossentropy', metrics = [iou])
 model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
 
 end_init= time.time()
@@ -37,7 +41,7 @@ print(" %s seconds for initialization---" % (end_init - start_time))
 
 start_training= time.time()
 
-history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=10,callbacks=[model_checkpoint],use_multiprocessing=False)
+history = parallel_model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=2,callbacks=[model_checkpoint],use_multiprocessing=False)
 
 end_training= time.time()
 

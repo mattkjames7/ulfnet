@@ -1,0 +1,40 @@
+#!/bin/bash --login
+#
+# PBS -l select=1:ncpus=36
+# PBS -l place=excl
+
+#PBS -q gpu
+#PBS -l select=1:ncpus=10:ngpus=0
+#PBS -N shared_mem
+#PBS -A d167-s1137563
+#PBS -l walltime=0:03:00
+
+
+
+# Switch to current working directory
+cd $PBS_O_WORKDIR
+
+#module load cuda
+#module load singularity
+
+module load miniconda 
+/lustre/home/d167/s1137563/ENTER/bin/python3 /lustre/home/d167/s1137563/Paolo_repository/unet/main.py > output 2> error
+
+
+#module load miniconda 
+#/lustre/home/d167/s1137563/ENTER/bin/python3 /lustre/home/d167/s1137563/Paolo_repository/unet/main.py > output 2> error
+
+#python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py > output 2> error
+#nvidia-smi
+#while true; 
+#do nvidia-smi --query-gpu=utilization.gpu --format=csv >> gpu_utillization.log; sleep 1;
+#singularity exec --nv tfgpu.simg python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py
+#done 
+#singularity exec --nv tfgpu.simg python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py
+#nvidia-smi
+
+#export CUDA_VISIBLE_DEVICES=3
+
+#singularity exec --nv tfgpu_copy.simg python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py > output 2> error
+#singularity exec --nv tfgpu_copy.simg nvprof python /lustre/home/d167/s1137563/Paolo_repository/unet/main.py > output 2> error
+

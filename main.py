@@ -31,7 +31,7 @@ data_gen_args = dict(rotation_range=0.2,
 myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train','image','label',data_gen_args,save_to_dir = None)
     
 model = unet()
-parallel_model = multi_gpu_model(model, gpus=2, cpu_merge=False)
+parallel_model = multi_gpu_model(model, gpus=4, cpu_merge=False)
 parallel_model.compile(optimizer = Adam(lr = 1e-4), loss = 'binary_crossentropy', metrics = [iou])
 model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
 

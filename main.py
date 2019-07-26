@@ -7,17 +7,24 @@ from keras import backend as K
 import tensorflow as tf
 import time
 
+from keras.backend import tensorflow_backend as K
+
+
+
 
 
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 #with K.tf.device('/gpu:3'):
 
-start_time= time.time()
+
+with tf.Session(config=tf.ConfigProto(intra_op_parallelism_threads=20)) as sess:
+    K.set_session(sess)
+    start_time= time.time()
 
 
 
-data_gen_args = dict(rotation_range=0.2,
+    data_gen_args = dict(rotation_range=0.2,
                         width_shift_range=0.05,
                         height_shift_range=0.05,
                         shear_range=0.05,
@@ -25,24 +32,24 @@ data_gen_args = dict(rotation_range=0.2,
                         horizontal_flip=True,
                         fill_mode='nearest')
                         
-BATCH_SIZE=2
-myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train','image','label',data_gen_args,save_to_dir = None)
+    BATCH_SIZE=2
+    myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train','image','label',data_gen_args,save_to_dir = None)
     
-model = unet_model.unet()
-model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
+    model = unet_model.unet()
+    model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
 
-end_init= time.time()
+    end_init= time.time()
 
-print(" %s seconds for initialization---" % (end_init - start_time))
+    print(" %s seconds for initialization---" % (end_init - start_time))
 
-start_training= time.time()
+    start_training= time.time()
 
-history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=2,callbacks=[model_checkpoint], workers=80)
+    history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=2,callbacks=[model_checkpoint], workers=1)
 
-end_training= time.time()
+    end_training= time.time()
 
-print(" %s seconds for training---" % (end_training - start_training))
-print(" %s seconds total execution time---" % (end_training - start_time))
+    print(" %s seconds for training---" % (end_training - start_training))
+    print(" %s seconds total execution time---" % (end_training - start_time))
 
 
 '''

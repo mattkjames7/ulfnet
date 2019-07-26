@@ -1,29 +1,29 @@
-2019-07-26 15:37:05.031160: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
-2019-07-26 15:37:09.424504: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
+2019-07-26 15:51:42.759916: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2019-07-26 15:51:47.158894: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
 name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
 pciBusID: 0000:1a:00.0
 totalMemory: 15.78GiB freeMemory: 15.36GiB
-2019-07-26 15:37:09.765876: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 1 with properties: 
+2019-07-26 15:51:47.504963: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 1 with properties: 
 name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
 pciBusID: 0000:1c:00.0
 totalMemory: 15.78GiB freeMemory: 15.36GiB
-2019-07-26 15:37:10.114677: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 2 with properties: 
+2019-07-26 15:51:47.854772: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 2 with properties: 
 name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
 pciBusID: 0000:88:00.0
 totalMemory: 15.78GiB freeMemory: 15.36GiB
-2019-07-26 15:37:10.473111: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 3 with properties: 
+2019-07-26 15:51:48.212868: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 3 with properties: 
 name: Tesla V100-SXM2-16GB major: 7 minor: 0 memoryClockRate(GHz): 1.53
 pciBusID: 0000:8a:00.0
 totalMemory: 15.78GiB freeMemory: 15.36GiB
-2019-07-26 15:37:10.473564: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0, 1, 2, 3
-2019-07-26 15:37:13.411823: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
-2019-07-26 15:37:13.412234: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 1 2 3 
-2019-07-26 15:37:13.412249: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N Y Y Y 
-2019-07-26 15:37:13.412258: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 1:   Y N Y Y 
-2019-07-26 15:37:13.412267: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 2:   Y Y N Y 
-2019-07-26 15:37:13.412276: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 3:   Y Y Y N 
-2019-07-26 15:37:13.413276: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14866 MB memory) -> physical GPU (device: 0, name: Tesla V100-SXM2-16GB, pci bus id: 0000:1a:00.0, compute capability: 7.0)
-2019-07-26 15:37:13.415405: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 14866 MB memory) -> physical GPU (device: 1, name: Tesla V100-SXM2-16GB, pci bus id: 0000:1c:00.0, compute capability: 7.0)
-2019-07-26 15:37:13.415764: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 14866 MB memory) -> physical GPU (device: 2, name: Tesla V100-SXM2-16GB, pci bus id: 0000:88:00.0, compute capability: 7.0)
-2019-07-26 15:37:13.416082: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 14866 MB memory) -> physical GPU (device: 3, name: Tesla V100-SXM2-16GB, pci bus id: 0000:8a:00.0, compute capability: 7.0)
+2019-07-26 15:51:48.213222: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0, 1, 2, 3
+2019-07-26 15:51:51.155429: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-26 15:51:51.155512: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 1 2 3 
+2019-07-26 15:51:51.155525: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N Y Y Y 
+2019-07-26 15:51:51.155535: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 1:   Y N Y Y 
+2019-07-26 15:51:51.155544: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 2:   Y Y N Y 
+2019-07-26 15:51:51.155553: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 3:   Y Y Y N 
+2019-07-26 15:51:51.156537: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14866 MB memory) -> physical GPU (device: 0, name: Tesla V100-SXM2-16GB, pci bus id: 0000:1a:00.0, compute capability: 7.0)
+2019-07-26 15:51:51.158448: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 14866 MB memory) -> physical GPU (device: 1, name: Tesla V100-SXM2-16GB, pci bus id: 0000:1c:00.0, compute capability: 7.0)
+2019-07-26 15:51:51.158802: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 14866 MB memory) -> physical GPU (device: 2, name: Tesla V100-SXM2-16GB, pci bus id: 0000:88:00.0, compute capability: 7.0)
+2019-07-26 15:51:51.159119: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 14866 MB memory) -> physical GPU (device: 3, name: Tesla V100-SXM2-16GB, pci bus id: 0000:8a:00.0, compute capability: 7.0)
 Using TensorFlow backend.

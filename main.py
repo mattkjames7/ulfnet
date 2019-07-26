@@ -37,7 +37,7 @@ print(" %s seconds for initialization---" % (end_init - start_time))
 
 start_training= time.time()
 
-history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=2,callbacks=[model_checkpoint], workers=60)
+history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=2,callbacks=[model_checkpoint], workers=80)
 
 end_training= time.time()
 

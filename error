@@ -8,8 +8,8 @@ Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep
 WARNING:tensorflow:From /lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Use tf.cast instead.
-2019-07-26 15:16:12.146985: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
-2019-07-26 15:16:12.153911: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2399475000 Hz
-2019-07-26 15:16:12.156635: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55555956c510 executing computations on platform Host. Devices:
-2019-07-26 15:16:12.156678: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
-2019-07-26 15:16:12.156849: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 4. Tune using inter_op_parallelism_threads for best performance.
+2019-07-26 15:31:35.592613: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+2019-07-26 15:31:35.599832: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2399475000 Hz
+2019-07-26 15:31:35.602699: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x555559597470 executing computations on platform Host. Devices:
+2019-07-26 15:31:35.602741: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-07-26 15:31:35.602892: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 3. Tune using inter_op_parallelism_threads for best performance.

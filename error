@@ -1,8 +1,8 @@
-2019-07-27 14:05:35.617999: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
-2019-07-27 14:05:35.625427: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2399475000 Hz
-2019-07-27 14:05:35.629292: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x555558b8bc90 executing computations on platform Host. Devices:
-2019-07-27 14:05:35.629335: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
-2019-07-27 14:05:35.629476: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2019-07-27 21:56:14.843878: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+2019-07-27 21:56:14.851980: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2400025000 Hz
+2019-07-27 21:56:14.855713: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x555558bb6e50 executing computations on platform Host. Devices:
+2019-07-27 21:56:14.855757: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-07-27 21:56:14.855902: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
 Using TensorFlow backend.
 WARNING:tensorflow:From /lustre/home/d167/s1137563/ENTER/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
 Instructions for updating:

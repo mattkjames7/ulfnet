@@ -1,5 +1,8 @@
+import time
+start_time = time.time()
+
 import unet_model 
-from data import trainGenerator, testGenerator, saveResult, saveResultThresholded, threshold_binarize, plot_imgs
+from data import trainGenerator, testGenerator, saveResult, saveResultThresholded, threshold_binarize, plot_imgs, plot_segm_history
 import keras
 from keras.callbacks import ModelCheckpoint
 import numpy as np
@@ -7,13 +10,17 @@ from keras import backend as K
 import tensorflow as tf
 import time
 
-
+end_imports= time.time()
 
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 #with K.tf.device('/gpu:3'):
 
-start_time= time.time()
+#start_time= time.time()
+print(" %s seconds for imports---" % (end_imports - start_time))
+
+start_time_initialization = time.time()
+
 
 
 
@@ -27,13 +34,14 @@ data_gen_args = dict(rotation_range=0.2,
                         
 BATCH_SIZE=2
 myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train','image','label',data_gen_args,save_to_dir = None)
-    
+im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
+NUM_TEST_IMAGES=2135    
 model = unet_model.unet()
 model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
 
 end_init= time.time()
 
-print(" %s seconds for initialization---" % (end_init - start_time))
+print(" %s seconds for initialization---" % (end_init - start_time_initialization))
 
 start_training= time.time()
 
@@ -42,22 +50,24 @@ history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=2,cal
 end_training= time.time()
 
 print(" %s seconds for training---" % (end_training - start_training))
-print(" %s seconds total execution time---" % (end_training - start_time))
+#print(" %s seconds total execution time---" % (end_training - start_time))
 
 
-'''
+start_plotting = time.time()
 
-#figure = plot_segm_history(history)
+figure = plot_segm_history(history)
 
-
-im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
+end_plotting = time.time()
+#im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
 #im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data_large/test'
 
+print(" %s seconds for plotting---" % (end_plotting - start_plotting))
 
 #NUM_TEST_IMAGES=2313
-NUM_TEST_IMAGES=12
 
+#NUM_TEST_IMAGES=2135
 
+start_predicting= time.time()
 
 testGene = testGenerator(im_test, NUM_TEST_IMAGES)
 results = model.predict_generator(testGene,NUM_TEST_IMAGES,verbose=1)
@@ -67,8 +77,18 @@ results = model.predict_generator(testGene,NUM_TEST_IMAGES,verbose=1)
 
 saveResult(im_test,results)
 #saveResultThresholded(im_test,results, threshold=0.4)
-#saveResultThresholded(im_test,results, threshold=0.5)
+saveResultThresholded(im_test,results, threshold=0.5)
 #saveResultThresholded(im_test,results, threshold=0.6)
+
+end_predicting = time.time()
+
+print(" %s seconds for predicting---" % (end_predicting - start_predicting))
+print(" %s seconds total execution time---" % (end_predicting - start_time))
+
+
+'''
+
+
 '''
 
 ### PREDICTION OVERLAY

@@ -18,7 +18,7 @@ data_gen_args = dict(rotation_range=0.2,
                         fill_mode='nearest')
                         
 BATCH_SIZE=2
-myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train','image','label',data_gen_args,save_to_dir = None)
+myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/unet/data_large/train','image','label',data_gen_args,save_to_dir = None)
     
 model = unet_model.unet()
 model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)

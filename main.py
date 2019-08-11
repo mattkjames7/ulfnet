@@ -54,8 +54,8 @@ SEED = 1
 
 #Network hyperparameters
 learning_rate = 0.0001
-drop_out = 0.5
-weight_init_mode = ['he_normal','he_uniform','glorot_normal','glorot_uniform','lecun_uniform','normal','uniform']
+drop_out = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
+weight_init_mode = ['he_normal','he_uniform','glorot_normal','glorot_uniform','lecun_uniform','lecun_normal','Orthogonal']
 batch_size = 2
 optimizer=  'Adam'
 
@@ -89,8 +89,9 @@ permutations = find_parameters(learning_rate,drop_out,weight_init_mode, batch_si
 
 #Model hyperparameter selection loop
 
-time_before_loop=time.time() 
+
 for idx_perms in range(len(permutations)):
+    time_inside_loop=time.time() 
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     sess = tf.Session(config=config)
@@ -139,19 +140,20 @@ for idx_perms in range(len(permutations)):
         cv_losses_temp.append(scores[0])
         K.clear_session()
         tf.reset_default_graph()
-        del model
-        del x_training
-        del y_training
-        del x_valid
-        del y_valid
+        #del model
+        #del x_training
+        #del y_training
+        #del x_valid
+        #del y_valid
     cv_losses.append(np.array(cv_losses_temp).mean())  
+    print(" This permutation took %s seconds ---" % (time.time() - time_inside_loop))
 
 
 
 
 #cv_losses.append(np.array(cv_losses_temp).mean())
  #   tf.reset_default_graph()
-#print("--- %s seconds ---" % (time.time() - time_before_loop))
+
 
 df = pd.DataFrame({'learning rate':permutations[:,0],'drop_out':permutations[:,1], 'weight_init_mode':permutations[:,2],'batch_size':permutations[:,3],'optimizer':permutations[:,4], 'val_loss':cv_losses}) 
  

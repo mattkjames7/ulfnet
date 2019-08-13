@@ -11,38 +11,38 @@ import time
 
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
-#with K.tf.device('/gpu:3'):
+with K.tf.device('/gpu:3'):
 
-start_time= time.time()
-
-
-
-data_gen_args = dict(rotation_range=0.2,
-                        width_shift_range=0.05,
-                        height_shift_range=0.05,
-                        shear_range=0.05,
-                        zoom_range=0.05,
-                        horizontal_flip=True,
-                        fill_mode='nearest')
-                        
-BATCH_SIZE=2
-myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train','image','label',data_gen_args,save_to_dir = None)
+    start_time= time.time()
     
-model = unet_model.unet()
-model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
-
-end_init= time.time()
-
-print(" %s seconds for initialization---" % (end_init - start_time))
-
-start_training= time.time()
-
-history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=10,callbacks=[model_checkpoint],use_multiprocessing=False)
-
-end_training= time.time()
-
-print(" %s seconds for training---" % (end_training - start_training))
-print(" %s seconds total execution time---" % (end_training - start_time))
+    
+    
+    data_gen_args = dict(rotation_range=0.2,
+                            width_shift_range=0.05,
+                            height_shift_range=0.05,
+                            shear_range=0.05,
+                            zoom_range=0.05,
+                            horizontal_flip=True,
+                            fill_mode='nearest')
+                            
+    BATCH_SIZE=2
+    myGene = trainGenerator(BATCH_SIZE,'/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/train','image','label',data_gen_args,save_to_dir = None)
+        
+    model = unet_model.unet()
+    model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
+    
+    end_init= time.time()
+    
+    print(" %s seconds for initialization---" % (end_init - start_time))
+    
+    start_training= time.time()
+    
+    history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=10,callbacks=[model_checkpoint],use_multiprocessing=False)
+    
+    end_training= time.time()
+    
+    print(" %s seconds for training---" % (end_training - start_training))
+    print(" %s seconds total execution time---" % (end_training - start_time))
 
 
 '''

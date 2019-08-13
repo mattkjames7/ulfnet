@@ -18,7 +18,7 @@ from keras.backend import tensorflow_backend as K
 #with K.tf.device('/gpu:3'):
 
 
-with tf.Session(config=tf.ConfigProto(intra_op_parallelism_threads=20)) as sess:
+with tf.Session(config=tf.ConfigProto(inter_op_parallelism_threads=10)) as sess:
     K.set_session(sess)
     start_time= time.time()
 
@@ -44,7 +44,7 @@ with tf.Session(config=tf.ConfigProto(intra_op_parallelism_threads=20)) as sess:
 
     start_training= time.time()
 
-    history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=10,callbacks=[model_checkpoint], workers=1)
+    history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=2,callbacks=[model_checkpoint], workers=1)
 
     end_training= time.time()
 

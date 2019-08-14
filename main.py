@@ -5,7 +5,7 @@ from keras.callbacks import ModelCheckpoint
 import numpy as np
 from keras import backend as K
 import tensorflow as tf
-
+import time
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 with tf.device('/gpu:3'):
@@ -22,10 +22,11 @@ with tf.device('/gpu:3'):
         
     model = unet_model.unet()
     model_checkpoint = ModelCheckpoint('unet_membrane.hdf5', monitor='loss',verbose=1, save_best_only=True)
+    start=time.time()
     history = model.fit_generator(myGene,steps_per_epoch=178/BATCH_SIZE,epochs=7,callbacks=[model_checkpoint])
     #figure = plot_segm_history(history)
-    
-    
+    print("--- %s seconds ---" % (time.time() - start))
+    '''
     im_test = '/lustre/home/d167/s1137563/Paolo_repository/unet/data/membrane/test'
     
     
@@ -41,7 +42,7 @@ with tf.device('/gpu:3'):
     saveResultThresholded(im_test,results, threshold=0.4)
     saveResultThresholded(im_test,results, threshold=0.5)
     saveResultThresholded(im_test,results, threshold=0.6)
-
+    '''
 
 
 

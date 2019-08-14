@@ -18,7 +18,7 @@ from keras.backend import tensorflow_backend as K
 #with K.tf.device('/gpu:3'):
 
 
-with tf.Session(config=tf.ConfigProto(inter_op_parallelism_threads=30)) as sess:
+with tf.Session(config=tf.ConfigProto(inter_op_parallelism_threads=40)) as sess:
     K.set_session(sess)
     start_time= time.time()
 

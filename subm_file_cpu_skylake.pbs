@@ -1,0 +1,15 @@
+#!/bin/bash --login
+
+#PBS -q gpu
+#PBS -l select=1:ncpus=40:ngpus=0
+#PBS -l place=excl
+#PBS -N unet_training
+#PBS -A d167-s1137563
+#PBS -l walltime=0:10:00
+
+# Switch to current working directory
+cd $PBS_O_WORKDIR
+
+source ~/ENTER/etc/profile.d/conda.sh
+/lustre/home/d167/s1137563/ENTER/bin/python3 main.py > output 2> error
+

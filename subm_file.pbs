@@ -1,22 +1,37 @@
 #!/bin/bash --login
-#
-#PBS -q gpu
-#PBS -l select=1:ncpus=40:ngpus=4
-#PBS -N test_overfitting
-#PBS -A d167
-#PBS -l walltime=0:15:0
 
+
+#If running code on Standard CPU
+#PBS -l select=1:ncpus=36
+#PBS -l place=excl
+
+
+#If running code on Skylake CPU
+#PBS -q gpu
+#PBS -l select=1:ncpus=40:ngpus=0
+
+
+#If running code on Skylake GPU
+#PBS -q gpu
+#PBS -l select=1:ncpus=10:ngpus=1
+
+#Then:
+#PBS -l place=excl
+#PBS -N unet_training
+#PBS -A d167-s1137563
+#PBS -l walltime=0:10:00
 
 
 # Switch to current working directory
 cd $PBS_O_WORKDIR
 
-module load miniconda
-/lustre/home/d167/s1137563/ENTER/bin/python3 main.py > output 2>error
-#module load cuda
+#If running code on Skylake or Standard CPUs
 #source ~/ENTER/etc/profile.d/conda.sh
-#conda activate unet
-#python3 main.py
+#/lustre/home/d167/s1137563/ENTER/bin/python3 main.py > output 2> error
 
+#If running code on GPU
 
+#module load cuda
+#module load singularity
+#singularity exec --nv tfgpu.simg python main.py > output 2> error
 

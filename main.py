@@ -5,6 +5,7 @@ import numpy as np
 from keras.callbacks import ModelCheckpoint
 import time
 from keras import backend as K 
+
 start_time=time.time() 
 
 
@@ -59,15 +60,14 @@ for fold_number in range(k):
     generator = dataGenerator(BATCH_SIZE, x_training,y_training,data_gen_args,seed = 1)
     model = unet_model.unet() 
     history=model.fit_generator(generator,steps_per_epoch=len(x_training)/BATCH_SIZE,epochs=10,verbose=1,validation_data = (x_valid,y_valid), callbacks=callbacks)
-    #figure = plot_segm_history(history, fold_number) 
-   # scores = model.evaluate(x_valid, y_valid)
-    #print(scores)
-    K.clear_session()
-    del model
-    del x_training
-    del y_training
-    del x_valid
-    del y_valid
+   # figure = plot_segm_history(history, fold_number) 
+    #scores = model.evaluate(x_valid, y_valid)
+    #K.clear_session()
+    #del model
+    #del x_training
+    #del y_training
+    #del x_valid
+    #del y_valid
     #cv_losses.append(scores[0])
  
  
@@ -98,7 +98,7 @@ results_thresholded = threshold_binarize(results)
 saveResult(im_test,results_thresholded)
  
 print("--- %s seconds (just for predictions) ---" % (time.time() - time_before_predictions))
-
+'''
 print("--- %s seconds (total execution time) ---" % (time.time() - start_time))
 
-'''
+

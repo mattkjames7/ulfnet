@@ -72,6 +72,20 @@ TO BE ADDED
 
 #![img/0label.png](img/0label.png)
 
+## Overview of code used to generate Tables and Figures in Dissertation manuscript
+
+| Figure (F) and/or Table (T)  | Commit        | Branch  | 
+| -------------        | ------------- | ------- |
+| F5.1         |TBA   |TBA         |
+| F5.2, T5.1         | f28b02bef9b04e335270e1864a1726309d5541d0  | vanilla x unet  |
+| F5.2, T5.1         | 18788411c90fe0630299c6c61413a6a42d6f1fe7  | vanilla x unet  |
+|F5.2, T5.1         | adf7e58961d4d0d4b6ba54ff3efbc42cef8cf01f  | vanilla x unet  |
+|F5.2, T5.1         | 3d438e1ee001a40fc7f3aeb78a19cf45ede35f26  | vanilla x unet  |
+|          |   |         |
+|          |   |         |
+|          |   |         |
+|          |   |         |
+
 
 ## About Keras
 
@@ -84,4 +98,6 @@ Keras has the following features:
 - supports arbitrary connectivity schemes (including multi-input and multi-output training).
 - runs seamlessly on CPU and GPU.
 Documentation can be found here [Keras.io](http://keras.io/)
+
+
 

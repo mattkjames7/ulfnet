@@ -74,6 +74,8 @@ TO BE ADDED
 
 ## Overview of code used to generate Tables and Figures in Dissertation manuscript
 
+### Chapter 5
+
 | Figure (F) and/or Table (T)  | Commit        | Branch  | 
 | -------------        | ------------- | ------- |
 | F5.1         |TBA   |TBA         |
@@ -81,11 +83,33 @@ TO BE ADDED
 | F5.2, T5.1         | 18788411c90fe0630299c6c61413a6a42d6f1fe7  | vanilla x unet  |
 |F5.2, T5.1         | adf7e58961d4d0d4b6ba54ff3efbc42cef8cf01f  | vanilla x unet  |
 |F5.2, T5.1         | 3d438e1ee001a40fc7f3aeb78a19cf45ede35f26  | vanilla x unet  |
-|          |   |         |
-|          |   |         |
-|          |   |         |
-|          |   |         |
+|F5.3          |8035f8875653fd591909af2cc4ef698b33066877 | x unet cross valid     |
+|F5.3          |042b2fe4ebf1b5cdb295beccb31cbce58fbff149 | x unet cross valid     |
+|F5.3          |f6c8b7225ed0f1752d0c92ce04ada55a2a1e2ae6 | x unet cross valid     |
+|T5.2        |  18788411c90fe0630299c6c61413a6a42d6f1fe7   |alternative loss functions|
+|T5.2       |b46ef2618e796373878dc9885dbc431ff7513a3b   |alternative loss functions  |
+|T5.2     |75627c0a1ef794f2f37b0d259dc13ceb16ba0aeb   |alternative loss functions |
+|T5.4    |1aaf33c504faf135e677658468c3071b28f3a310  | x unet cross valid    |
+|T5.4    |0d6cf42fbc749a453b99e500986cf773ec2c2e34  | k unet cross valid   |
+|F5.5      |TBA         |TBA                 |
+|F5.5     |bb91275bbbf0e2147e3e38cbc9306628b664a7e8    | k unet cross valid    |
+|T5.5     |c1ffc53039082a151033004e0728e9ede729be4d   | hyperparameter tuning tests |
+|T5.6     |d1e6fb6611de7821dfc5032f3264673da31c4aca  | hyperparameter tuning tests  |
+|F5.7,T5.7     |ea51ba9cc5b5f73d3efce69f65d0588772abad3f  | master                |
+|T5.7     |8fd879577eb190ffc54d606a23452364ab647be7  | master                |
+|T5.7     |21f984c8ed8e66f4dcb97b61cf51580156b5521b  | master                |
+|F5.8, F5.12, F.13 | 11948146f5822df2653d464cedd30c70cdc2522a    |master         |
+|F5.9, T5.8     |b7c4aedd3ace6fe7a721b6a651dd77351fd74acd         | master        |
+|F5.9, T5.8     |51590003f95ac67ca77c95d7287c4ea8874e9402  | master        |
+|F5.9, T5.8     |650c6968914ca0ea34eae588747c427af3a25ff3         | master        |
+|F5.10     |a77f3505b7540f794b005b908e586f182900b778         |x unet cross valid   |
+|F5.11     |d94ef232d64b494c0f2ebaa82a9130ce5209d026     |master                 |
+|F5.14  |8a609fdc931da90fb2fc61fa5ba9e2e41b6f69a9    |image size experiments   |
+|F5.15     | e8b3e3f753b864e5969616280f24925eb797f343        |image size experiments   |
+|F5.17,5.18,5.19|0f26f794b87103dafa0c8138d96c60e175412886|activations heatmaps|
 
+### Chapter 6
+TBA
 
 ## About Keras
 

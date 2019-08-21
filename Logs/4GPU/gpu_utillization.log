@@ -1,730 +1,660 @@
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-1 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-1 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-1 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-8 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-1 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-1 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-2 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-1 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-1 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-97 %
-utilization.gpu [%]
-27 %
-4 %
-5 %
-87 %
-utilization.gpu [%]
-11 %
-2 %
-2 %
-33 %
-utilization.gpu [%]
-6 %
-2 %
-2 %
-20 %
-utilization.gpu [%]
-15 %
-2 %
-2 %
-40 %
-utilization.gpu [%]
-12 %
-2 %
-2 %
-33 %
-utilization.gpu [%]
-12 %
-2 %
-2 %
-45 %
-utilization.gpu [%]
-11 %
-2 %
-3 %
-33 %
-utilization.gpu [%]
-11 %
-2 %
-2 %
-33 %
-utilization.gpu [%]
-12 %
-2 %
-2 %
-33 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-49 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-11 %
-2 %
-2 %
-28 %
-utilization.gpu [%]
-11 %
-2 %
-2 %
-33 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-30 %
-3 %
-5 %
-86 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-54 %
-utilization.gpu [%]
-16 %
-2 %
-3 %
-45 %
-utilization.gpu [%]
-11 %
-2 %
-3 %
-34 %
-utilization.gpu [%]
-11 %
-2 %
-2 %
-36 %
-utilization.gpu [%]
-18 %
-3 %
-2 %
-47 %
-utilization.gpu [%]
-19 %
-2 %
-2 %
-55 %
-utilization.gpu [%]
-18 %
-2 %
-3 %
-58 %
-utilization.gpu [%]
-12 %
-2 %
-3 %
-52 %
-utilization.gpu [%]
-11 %
-2 %
-2 %
-36 %
-utilization.gpu [%]
-6 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-17 %
-2 %
-2 %
-53 %
-utilization.gpu [%]
-16 %
-2 %
-3 %
-46 %
-utilization.gpu [%]
-15 %
-2 %
-2 %
-37 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-49 %
-utilization.gpu [%]
-19 %
-2 %
-2 %
-57 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-58 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-52 %
-utilization.gpu [%]
-16 %
-2 %
-3 %
-44 %
-utilization.gpu [%]
-11 %
-2 %
-2 %
-44 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-47 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-56 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-57 %
-utilization.gpu [%]
-17 %
-2 %
-3 %
-57 %
-utilization.gpu [%]
-12 %
-2 %
-3 %
-33 %
-utilization.gpu [%]
-12 %
-3 %
-2 %
-36 %
-utilization.gpu [%]
-17 %
-3 %
-2 %
-43 %
-utilization.gpu [%]
-18 %
-3 %
-2 %
-52 %
-utilization.gpu [%]
-18 %
-2 %
-3 %
-59 %
-utilization.gpu [%]
-11 %
-2 %
-3 %
-52 %
-utilization.gpu [%]
-17 %
-2 %
-2 %
-38 %
-utilization.gpu [%]
-18 %
-3 %
-2 %
-48 %
-utilization.gpu [%]
-6 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-11 %
-3 %
-2 %
-36 %
-utilization.gpu [%]
-16 %
-3 %
-2 %
-44 %
-utilization.gpu [%]
-16 %
-3 %
-2 %
-47 %
-utilization.gpu [%]
-16 %
-2 %
-3 %
-36 %
-utilization.gpu [%]
-12 %
-2 %
-3 %
-33 %
-utilization.gpu [%]
-11 %
-3 %
-3 %
-35 %
-utilization.gpu [%]
-15 %
-3 %
-2 %
-43 %
-utilization.gpu [%]
-17 %
-3 %
-2 %
-51 %
-utilization.gpu [%]
-16 %
-2 %
-3 %
-40 %
-utilization.gpu [%]
-13 %
-2 %
-3 %
-33 %
-utilization.gpu [%]
-11 %
-3 %
-3 %
-34 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-12 %
-2 %
-2 %
-33 %
-utilization.gpu [%]
-19 %
-3 %
-2 %
-59 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-54 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-44 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-46 %
-utilization.gpu [%]
-16 %
-2 %
-3 %
-44 %
-utilization.gpu [%]
-15 %
-2 %
-2 %
-42 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-50 %
-utilization.gpu [%]
-19 %
-2 %
-2 %
-57 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-58 %
-utilization.gpu [%]
-6 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-11 %
-3 %
-2 %
-35 %
-utilization.gpu [%]
-16 %
-3 %
-2 %
-56 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-47 %
-utilization.gpu [%]
-16 %
-2 %
-3 %
-40 %
-utilization.gpu [%]
-15 %
-2 %
-2 %
-34 %
-utilization.gpu [%]
-11 %
-2 %
-2 %
-33 %
-utilization.gpu [%]
-19 %
-3 %
-2 %
-59 %
-utilization.gpu [%]
-13 %
-2 %
-2 %
-51 %
-utilization.gpu [%]
-17 %
-2 %
-2 %
-57 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-47 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-43 %
-utilization.gpu [%]
-17 %
-2 %
-2 %
-33 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-48 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-55 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-59 %
-utilization.gpu [%]
-17 %
-2 %
-3 %
-50 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-38 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-55 %
-utilization.gpu [%]
-18 %
-2 %
-2 %
-59 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-52 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-37 %
-utilization.gpu [%]
-13 %
-2 %
-2 %
-33 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-15 %
-2 %
-3 %
-35 %
-utilization.gpu [%]
-12 %
-2 %
-3 %
-33 %
-utilization.gpu [%]
-13 %
-3 %
-3 %
-38 %
-utilization.gpu [%]
-18 %
-3 %
-2 %
-47 %
-utilization.gpu [%]
-18 %
-3 %
-2 %
-54 %
-utilization.gpu [%]
-15 %
-2 %
-3 %
-33 %
-utilization.gpu [%]
-12 %
-3 %
-3 %
-33 %
-utilization.gpu [%]
-13 %
-3 %
-2 %
-39 %
-utilization.gpu [%]
-16 %
-3 %
-2 %
-44 %
-utilization.gpu [%]
-19 %
-3 %
-2 %
-55 %
-utilization.gpu [%]
-11 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-17 %
-2 %
-2 %
-58 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-49 %
-utilization.gpu [%]
-15 %
-2 %
-3 %
-36 %
-utilization.gpu [%]
-11 %
-3 %
-2 %
-33 %
-utilization.gpu [%]
-11 %
-3 %
-2 %
-34 %
-utilization.gpu [%]
-17 %
-3 %
-2 %
-55 %
-utilization.gpu [%]
-16 %
-2 %
-2 %
-44 %
-utilization.gpu [%]
-12 %
-2 %
-3 %
-33 %
-utilization.gpu [%]
-12 %
-3 %
-3 %
-37 %
-utilization.gpu [%]
-18 %
-3 %
-2 %
-45 %
-utilization.gpu [%]
-0 %
-2 %
-0 %
-33 %
-utilization.gpu [%]
-19 %
-0 %
-51 %
-100 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
-utilization.gpu [%]
-0 %
-0 %
-0 %
-0 %
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+0 %, 0 %, 16160 MiB, 15649 MiB, 511 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 749 MiB, 15411 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 0 %, 16160 MiB, 661 MiB, 15499 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 567 MiB, 15593 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+98 %, 51 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+30 %, 12 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+85 %, 50 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+17 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+55 %, 32 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+48 %, 27 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+15 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+40 %, 23 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+11 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 7 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+57 %, 33 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+58 %, 34 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+52 %, 30 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+28 %, 16 %, 16160 MiB, 781 MiB, 15379 MiB
+5 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+83 %, 49 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+14 %, 8 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+58 %, 34 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+11 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+11 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+11 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+36 %, 21 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+13 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+36 %, 21 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+43 %, 25 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+17 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+54 %, 31 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+48 %, 28 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+40 %, 24 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+6 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+22 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+54 %, 32 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+44 %, 26 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+15 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+36 %, 21 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+11 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+34 %, 20 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+14 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+38 %, 22 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+17 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+46 %, 27 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+47 %, 27 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+41 %, 24 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+11 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+11 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+15 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+39 %, 23 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+47 %, 27 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+19 %, 7 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+54 %, 32 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+17 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+53 %, 31 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+44 %, 26 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+14 %, 8 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+34 %, 20 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+11 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+11 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+37 %, 22 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+17 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+36 %, 21 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+46 %, 27 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+45 %, 26 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+15 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+38 %, 22 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 20 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+13 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+39 %, 22 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+10 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+38 %, 22 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+19 %, 7 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+59 %, 34 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 8 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+58 %, 34 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+17 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+49 %, 28 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+42 %, 24 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+43 %, 25 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+45 %, 26 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+51 %, 30 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+19 %, 7 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+58 %, 34 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 8 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+55 %, 32 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+17 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+51 %, 29 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+11 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+36 %, 21 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+14 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+42 %, 25 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+13 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+40 %, 23 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+47 %, 27 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+50 %, 29 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+56 %, 33 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+40 %, 23 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+15 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+35 %, 20 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+35 %, 20 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+13 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+40 %, 23 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+54 %, 32 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+50 %, 29 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+49 %, 29 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+50 %, 29 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+53 %, 31 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+14 %, 8 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+58 %, 34 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+46 %, 27 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+38 %, 22 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+15 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+19 %, 7 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+36 %, 22 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 8 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+56 %, 33 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+51 %, 29 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+45 %, 26 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+37 %, 22 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 7 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+58 %, 34 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+53 %, 31 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+48 %, 27 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+42 %, 25 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+44 %, 26 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+44 %, 25 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+50 %, 30 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+19 %, 7 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+57 %, 33 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+19 %, 7 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+57 %, 33 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+54 %, 31 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+15 %, 9 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+12 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+11 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+33 %, 19 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+11 %, 5 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+36 %, 21 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+18 %, 6 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+45 %, 26 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+3 %, 1 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+48 %, 27 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+16 %, 10 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+2 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+52 %, 30 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 781 MiB, 15379 MiB
+0 %, 0 %, 16160 MiB, 551 MiB, 15609 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+61 %, 8 %, 16160 MiB, 16160 MiB, 0 MiB
+40 %, 5 %, 16160 MiB, 16160 MiB, 0 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB
+0 %, 0 %, 16160 MiB, 16160 MiB, 0 MiB

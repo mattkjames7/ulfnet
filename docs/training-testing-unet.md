@@ -6,6 +6,8 @@ Run:
 
 ```bash
 qsub training_unet_standard_bash_script.pbs 
+```
+
 ---
 
 
@@ -13,6 +15,7 @@ qsub training_unet_standard_bash_script.pbs
 
 ```bash
 qsub training_unet_gpu_bash_script.pbs
+```
 ---
 
 Predicted results of test images can be found in data/membrane/test

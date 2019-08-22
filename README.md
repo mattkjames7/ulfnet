@@ -10,7 +10,7 @@ This repository was maintained by Paolo Marangio as part of the Dissertation pro
 
 The data about the IARs phenomenon has been collected by BGS over the past 7 years using high frequency induction coils installed at Eskdalamuir Observatory. This has been devided into 178 days used for training and 2135 days used for testing. You can find these images(size 701x1101) in folder data/membrane.
 
-### Model
+### Neural Network
 
 ![img/u-net-architecture.png](img/u-net-architecture.png)
 
@@ -24,53 +24,45 @@ Output from the network is a 256x256 image that represents the segmentation mask
 
 ### Training
 
-The model is trained for 10 Epochs on IARs training data with binary crossentropy as loss function and Intersection over Union(IoU) as evaluation metric. 
+U-net is trained for 10 Epochs on IARs training data with binary crossentropy as loss function and Intersection over Union(IoU) as evaluation metric. On a dataset of 178 training examples, it achieved a training loss of 0.2783 and an IoU score of 0.8265.
 
-FINAL IOU SCORE TO BE ADDED
-FINAL TRAINING LOSS
+### Testing
 
+Model is used to generate predictions for test images. 
 
-### Code features
+#![img/22.jpg](img/22.jpg)
 
-TO BE ADDED
+#![img/22_predict_thresholded_0.5_copy.png](img/22_predict_thresholded_0.5_copy.png)
 
 ### Branches overview
 
-TO BE ADDED
+| Branch name | Feature  |
+| -------------        | -------------
+| activations heatmaps    |experiments with keract package   |
+|alternative loss functions  |experiments with alternative loss functions   |    
+|code profiling | timing entire code before and after HPC optimizations                                |
+|image size experiments |experiments with finalized model on images of larger size                                 |
+|k unet cross valid  | implementation of K U-net with cross-validation                                |
+|  master                   | experiments with finalized model          |
+|parallelization experiments repeated   |repeats of some multithreading experiments             |
+|  parallelization experiments   | experiments with multithreading and GPU parallelization     |
+|  hyperparameter tuning tests                  |experiments for identifying best hyperparameter values    |
+|x unet cross valid  |implementation of X U-net with cross-validation             |
+|vanilla x unet    |vanilla implementation of X U-net     |
 
 ---
 
-## How to use
+# Get started
 
-### Dependencies
+Set up (Cirrus at EPCC):
 
-The programme depends on the following libraries:
+* [Set up Cirrus environment](./docs/setup-cirrus.md)
 
-* Tensorflow
-* Keras
-* Numpy
-* Scikit-image
-* Matplotlib
+Training and testing U-net:
 
-A full list of program dependencies can be found in requirements_pip.txt and requirements_conda.txt.
+* [Submit job to Standard or GPU compute node ](./docs/training-testing-unet.md)
 
-This code should be compatible with Python versions 2.7-3.5.
-
-### Run main.py
-
-The programme can be run on either CPU or GPU. Given small dataset size, 1 GPU was optimal. 
-
-You will see the predicted results of test image in data/membrane/test
-
-### Results
-
-#Use the trained model to do segmentation on test images, the result is statisfactory.
-
-TO BE ADDED
-
-#![img/0test.png](img/0test.png)
-
-#![img/0label.png](img/0label.png)
+---
 
 ## Overview of code used to generate Tables and Figures in Dissertation manuscript
 

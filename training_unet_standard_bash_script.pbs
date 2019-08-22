@@ -1,0 +1,19 @@
+#!/bin/bash --login
+#
+#PBS -l select=1:ncpus=36
+#PBS -l place=excl
+#PBS -N job_name
+#PBS -A d167-s1137563
+#PBS -l walltime=0:20:00
+
+# Switch to current working directory
+cd $PBS_O_WORKDIR
+
+# Activate conda virtual environment
+source ~/ENTER/etc/profile.d/conda.sh
+conda activate unet
+
+# Run main.py 
+/lustre/home/d167/s1137563/ENTER/bin/python3 /lustre/home/d167/s1137563/Paolo_repository/unet/main.py > output 2> error
+
+

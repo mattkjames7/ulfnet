@@ -48,6 +48,8 @@ singularity build tfgpu.simg docker://tensorflow/tensorflow:1.12.0-gpu-py3
 
 ## Install packages inside Tensorflow-gpu image 
 ```bash
+module load singularity
+singularity shell tfgpu.simg
 conda install -c anaconda --file requirements_conda.txt
 pip install -r requirements_pip.txt
 ```

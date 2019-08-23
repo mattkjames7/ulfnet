@@ -100,9 +100,6 @@ Training and testing U-net:
 |F5.15     | e8b3e3f753b864e5969616280f24925eb797f343        |image size experiments   |
 |F5.17,5.18,5.19|0f26f794b87103dafa0c8138d96c60e175412886|activations heatmaps|
 
-### Chapter 6
-TBA
-
 ## About Keras
 
 Keras is a minimalist, highly modular neural networks library, written in Python and capable of running on top of either TensorFlow or Theano. It was developed with a focus on enabling fast experimentation. Being able to go from idea to result with the least possible delay is key to doing good research.

@@ -8,33 +8,12 @@ import skimage.transform as trans
 import matplotlib.pyplot as plt
 
 
-Sky = [128,128,128]
-Building = [128,0,0]
-Pole = [192,192,128]
-Road = [128,64,128]
-Pavement = [60,40,222]
-Tree = [128,128,0]
-SignSymbol = [192,128,128]
-Fence = [64,64,128]
-Car = [64,0,128]
-Pedestrian = [64,64,0]
-Bicyclist = [0,128,192]
-Unlabelled = [0,0,0]
-
-COLOR_DICT = np.array([Sky, Building, Pole, Road, Pavement,
-                          Tree, SignSymbol, Fence, Car, Pedestrian, Bicyclist, Unlabelled])
-
-
 def adjustData(img,mask,flag_multi_class,num_class):
     if(flag_multi_class):
         img = img / 255
         mask = mask[:,:,:,0] if(len(mask.shape) == 4) else mask[:,:,0]
         new_mask = np.zeros(mask.shape + (num_class,))
         for i in range(num_class):
-            #for one pixel in the image, find the class in mask and convert it into one-hot vector
-            #index = np.where(mask == i)
-            #index_mask = (index[0],index[1],index[2],np.zeros(len(index[0]),dtype = np.int64) + i) if (len(mask.shape) == 4) else (index[0],index[1],np.zeros(len(index[0]),dtype = np.int64) + i)
-            #new_mask[index_mask] = 1
             new_mask[mask == i,i] = 1
         new_mask = np.reshape(new_mask,(new_mask.shape[0],new_mask.shape[1]*new_mask.shape[2],new_mask.shape[3])) if flag_multi_class else np.reshape(new_mask,(new_mask.shape[0]*new_mask.shape[1],new_mask.shape[2]))
         mask = new_mask
@@ -83,64 +62,6 @@ def trainGenerator(batch_size,train_path,image_folder,mask_folder,aug_dict,image
         yield (img,mask)
 
 
-'''
-def testGenerator(test_path,num_image = 30,target_size = (256,256),flag_multi_class = False,as_gray = True):
-    for i in range(num_image):
-        img = io.imread(os.path.join(test_path,"%d.png"%i),as_gray = as_gray)
-        img = img / 255
-        img = trans.resize(img,target_size)
-        img = np.reshape(img,img.shape+(1,)) if (not flag_multi_class) else img
-        img = np.reshape(img,(1,)+img.shape)
-        yield img
-'''
-
-def geneTrainNpy(image_path,mask_path,flag_multi_class = False,num_class = 2,image_prefix = "image",mask_prefix = "mask",image_as_gray = True,mask_as_gray = True):
-    image_name_arr = glob.glob(os.path.join(image_path,"%s*.png"%image_prefix))
-    image_arr = []
-    mask_arr = []
-    for index,item in enumerate(image_name_arr):
-        img = io.imread(item,as_gray = image_as_gray)
-        img = np.reshape(img,img.shape + (1,)) if image_as_gray else img
-        mask = io.imread(item.replace(image_path,mask_path).replace(image_prefix,mask_prefix),as_gray = mask_as_gray)
-        mask = np.reshape(mask,mask.shape + (1,)) if mask_as_gray else mask
-        img,mask = adjustData(img,mask,flag_multi_class,num_class)
-        image_arr.append(img)
-        mask_arr.append(mask)
-    image_arr = np.array(image_arr)
-    mask_arr = np.array(mask_arr)
-    return image_arr,mask_arr
-
-
-def labelVisualize(num_class,color_dict,img):
-    img = img[:,:,0] if len(img.shape) == 3 else img
-    img_out = np.zeros(img.shape + (3,))
-    for i in range(num_class):
-        img_out[img == i,:] = color_dict[i]
-    return img_out / 255
-
-
-def test_file_reader(test_path, as_gray = True, target_dim = (256,256)):
-    '''
-        Reads path, resized and returns all images on specified folder
-    '''
-    extensions = glob(os.path.join(test_path,'*.jpg'))
-    for filename in extensions:
-        img = io.imread(filename,as_gray = as_gray)
-        img = trans.resize(img, target_dim, mode='constant')
-        img = np.reshape(img,img.shape+(1,))
-        img = np.reshape(img,(1,)+img.shape)
-        yield img
-
-
-'''        
-def saveResult(save_path,pred_im_array): 
-    #saves images into specified directory
-    for i,item in enumerate(pred_im_array):
-        img = item[:,:,0]
-       # io.imsave(os.path.join(save_path,f"{i}_predict.png"),img)
-        io.imsave(os.path.join(save_path,str(i)+"_predict.png"),img)
-'''        
-
 def plot_segm_history(history, things_to_plot=['iou', 'loss']):
     
     plt.figure(figsize=(12,6))
@@ -169,7 +90,6 @@ def saveResult(save_path,pred_im_array):
     #saves images into specified directory
     for i,item in enumerate(pred_im_array):
         img = item[:,:,0]
-       # io.imsave(os.path.join(save_path,f"{i}_predict.png"),img)
         io.imsave(os.path.join(save_path,str(i)+"_predict.png"),img)
 
 def threshold_binarize(x, threshold=0.5):
@@ -179,11 +99,10 @@ def threshold_binarize(x, threshold=0.5):
     return y
 
 def saveResultThresholded(save_path,pred_im_array,threshold):
-    #saves images into specified directory
+    #saves threshold images into specified directory
     results_thresholded = threshold_binarize(pred_im_array, threshold)
     for i,item in enumerate(results_thresholded):
         img = item[:,:,0]
-       # io.imsave(os.path.join(save_path,f"{i}_predict.png"),img)
         io.imsave(os.path.join(save_path,str(i)+"_predict_thresholded_" + str(threshold) + ".png"),img)
 
 def reshape_arr(arr):
@@ -256,11 +175,6 @@ def mask_to_red(mask):
     c3 = np.zeros((img_size,img_size))
     c4 = mask.reshape(img_size,img_size)
     return np.stack((c1, c2, c3, c4), axis=-1)
-
-
-
-
-
 
 
 def plot_imgs(org_imgs, 

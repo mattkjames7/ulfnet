@@ -1,6 +1,6 @@
 # Automatic detection of Ionospheric Alfvén Resonances using U-net
 
-This repository was maintained by Paolo Marangio as part of the Dissertation project counting towards the degree of Master of Science in High Performance Computing with Data Science. The work presented here is the result of a collaboration between the Edinburgh Parallel Computing Center (EPCC) and the British Geological Survey (BGS).
+This repository was maintained by Paolo Marangio as part of the Dissertation project counting towards the degree of Master of Science in High Performance Computing with Data Science. The work presented here is the result of a collaboration between the Edinburgh Parallel Computing Center (EPCC) and the British Geological Survey (BGS). This work also formed the basis for a publication in the *Computers & Geosciences* Journal ([Marangio2021](https://www.sciencedirect.com/science/article/pii/S0098300420305811?via%3Dihub)).
 
 ---
 

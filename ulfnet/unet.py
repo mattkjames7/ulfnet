@@ -7,6 +7,24 @@ class unet(object):
 		'''
 		Initializer for the unet object.
 		
+		Keyword Arguments
+		=================
+		InputSize : tuple
+			This will define the shape of the input, 
+			by default (256,256,1)
+		Loss : str
+			Loss function to use (default='binary_crossentropy')
+		HiddenAF : str
+			Name of the activation function to use on the hidden layers
+			(default='relu')
+		OutputAF : str
+			Output activation function (default='sigmoid')
+		Optimizer : str
+			Name of the optimizer to use (default='Adam')
+		OptimizerOpts : dict	
+			Dictionary containing the optimizer settings.
+		
+		
 		'''
 		#settings for this network
 		self.InputSize = kwargs.get('InputSize',(256,256,1))
@@ -57,6 +75,13 @@ class unet(object):
 		
 		'''
 			
+		#bring a bunch of the keras functions into this namespace
+		Input = keras.layers.Input
+		Conv2D = keras.layers.Conv2D
+		MaxPooling2D = keras.layers.MaxPooling2D
+		Dropout = keras.layers.Dropout
+		concatenate = keras.layers.concatenate
+		UpSampling2D = keras.layers.UpSampling2D
 		
 		inputs = Input(self.InputSize)
 		conv1 = Conv2D(64, 3, activation=self._HidAF, padding='same',
@@ -120,8 +145,8 @@ class unet(object):
 					   kernel_initializer='he_normal')(conv9)
 		conv9 = Conv2D(2, 3, activation=self._HidAF, padding='same',
 					   kernel_initializer='he_normal')(conv9)
-		conv10 = Conv2D(1, 1, activation=self.OutAF)(conv9)
+		conv10 = Conv2D(1, 1, activation=self._OutAF)(conv9)
 
-		self.model = Model(inputs=inputs, outputs=conv10)
+		self.model = keras.Model(inputs=inputs, outputs=conv10)
 		self.model.compile(optimizer=self._Opt,
-				loss=self.Loss, metrics=[self.Loss,'accuracy', iou])	
+				loss=self.Loss, metrics=[self.Loss,'accuracy', 'iou'])	

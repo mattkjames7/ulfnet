@@ -1,6 +1,7 @@
 import numpy as np
 from tensorflow import keras
 from tensorflow.keras import layers
+from .iou import iou
 
 class unet(object):
 	def __init__(self,**kwargs):
@@ -149,4 +150,18 @@ class unet(object):
 
 		self.model = keras.Model(inputs=inputs, outputs=conv10)
 		self.model.compile(optimizer=self._Opt,
-				loss=self.Loss, metrics=[self.Loss,'accuracy', 'iou'])	
+				loss=self.Loss, metrics=[self.Loss,'accuracy', iou])	
+				
+	def AddTrainingData(self,X,y):
+		'''
+		Insert training samples to the unet object.
+		
+		Inputs
+		======
+		X : float
+			This should be a 4D matrix, if input shape is (256,256,1),
+			then X should be (m,256,256,1) where m is the number of 
+			samples.
+		
+		
+		'''

@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 
 
 def adjustData(img, mask, flag_multi_class, num_class):
+    print('adjust')
     if(flag_multi_class):
         img = img / 255
         mask = mask[:, :, :, 0] if(len(mask.shape) == 4) else mask[:, :, 0]
